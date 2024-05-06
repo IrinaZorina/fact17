@@ -1,0 +1,93 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    perspective: 500px;
+}
+.header2{
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 60px;
+    background-color: black;
+    z-index: 100;
+    box-shadow: rgba(255,255,255,.8) 0 2px 6px -3px;
+}
+.vodorod2{
+    text-decoration: none;
+    color: #009efd;
+    text-align: center;
+    text-shadow: 1px 1px 2px #009efd;
+}
+.logo2{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.logo2:hover{
+    color: #009efd;
+    text-shadow: 1px 1px 2px #009efd;
+}
+.container2{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 20px;
+}
+.cell2{
+    border: 1px solid white;
+    padding: 5px;
+}
+.symbol{
+    display: grid;
+    grid-area: symbol;
+    font-size: 26px;
+}
+.name{
+    display: grid;
+    grid-area: name;
+    font-size: 26px;
+}
+.number{
+    grid-area: number;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: grid;
+    font-size: 20px;
+}
+.atomic-mass{
+    grid-area: atomic-mass;
+    justify-content: flex-end;
+    display: grid;
+    font-size: 20px;
+}
+.cell-main{
+    display: grid;
+    grid-template-areas:
+    "symbol . number"
+    ". . atomic-mass"
+    "name . ."  ;
+    padding: 10px;
+    background: #009efd;
+    box-shadow:
+            inset rgba(0,0,0,.6) 0 -3px 8px,
+            inset rgba(252,255,255,.7) 0 3px 8px,
+            rgba(0,0,0,.8) 0 3px 8px -3px;
+}
+.cell-main:hover{
+    transition: all 1s ease-in-out;
+    border-radius: 15%;
+}
+@media screen and (max-width: 1200px) {
+    .header{
+        font-size: 14px;
+        margin-bottom: auto;
+    }
+}
