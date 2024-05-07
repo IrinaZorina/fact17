@@ -21,7 +21,7 @@ if ($day) {
     <link rel="icon" href="media/vodo.png">
 </head>
 <body>
-<header class="header2">
+<header class="header">
     <a href="index.php" class="logo2">Сайт-визитка</a>
     <a href="vodorod.php" class="vodorod2">Водород</a>
 </header>
