@@ -1,0 +1,330 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body.day {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.night {
+    background-color: #1b1e23;
+    color: #ffffff;
+}
+
+main {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding: 0 80px;
+}
+
+header,
+.photo,
+.name,
+.about,
+.review,
+.container-flex li,
+.container-flex img,
+.container-grid li,
+.container-grid img,
+.current-time,
+.element
+ {
+    border: 2px solid;
+    border-color: #000000;
+}
+
+body.night header,
+body.night .photo,
+body.night .name,
+body.night .about,
+body.night .review,
+body.night .container-flex li,
+body.night .container-flex img,
+body.night .container-grid li,
+body.night .container-grid img,
+body.night .current-time,
+body.night .element
+ {
+    border-color: #ffffff;
+}
+
+header {
+    display: flex;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.info-container .photo {
+    height: 400px;
+    margin-right: 40px;
+}
+
+.info-container .user-info {
+    display: flex;
+    flex-wrap: wrap;    
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.user-info .name {
+    width: 100%;    
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+  }
+
+.user-info .about,
+.user-info .review {
+    width: 45%;
+    padding: 20px;
+}
+
+.block-title {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.container-flex li {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    padding: 20px;
+}
+
+.container-flex li:last-child {
+    margin-right: 0;
+}
+
+.container-flex img {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.container-flex .photo-title,
+.container-grid .photo-title  
+{
+    display: block;
+    text-align: center;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.container-grid li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding: 20px;
+}
+
+.container-grid img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.current-time {
+    display: flex;
+    width: 80px;
+    border-radius: 50px;
+    padding: 2px 5px;
+}
+
+body.day .current-time {
+    justify-content: left;
+}
+
+body.night .current-time {
+    justify-content: right;
+}
+
+.current-time img{
+    width: 40px;
+}
+
+.element {
+    display: flex;
+    flex-wrap: wrap;
+    width: 125px;
+    align-content: flex-start;
+    background-color: #ffdb58;
+    padding: 2px;
+    color: #000000;
+}
+
+.element .element-letter {
+    width: 50%;
+    font-size: 32px;
+    line-height: 27px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.element .element-number {
+    width: 50%;
+    font-size: 22px;
+    line-height: 18px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.element .element-weight {
+    width: 100%;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: right;
+}
+
+.element .element-name {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+    .user-info .about,
+    .user-info .review {
+        width: 44%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .info-container .photo {
+        height: 100%;
+        margin-right: 40px;
+    }
+    
+    .user-info .name,
+    .user-info .about,
+    .user-info .review {
+        width: 100%;
+        padding: 5px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .user-info .review {
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container-flex {
+        flex-wrap: wrap;
+    }
+
+    .container-flex li {
+        width: 41%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+    }
+
+    .info-container .photo {
+        margin: 0 auto;
+        margin-bottom: 10px;
+        padding: 0;
+        width: 50%;
+        height: 100%;
+    }
+
+    .container-flex{
+        flex-direction: column;
+    }
+
+    .container-flex li {
+        margin: 0;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+    
+    .container-flex img {
+        width: 90%;
+    }
+
+    .container-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    header {
+        flex-wrap: wrap;    
+        justify-content: space-around;
+    }
+    
+    .header-text {
+        order: 1;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .current-time {
+        order: 2;
+    }
+
+    .element {
+        order: 3;
+        width: 85px;
+    }
+    
+    .element .element-letter {
+        font-size: 22px;
+        line-height: 17px;
+    }
+    
+    .element .element-number {
+        font-size: 12px;
+        line-height: 8px;
+    }
+    
+    .element .element-weight,
+    .element .element-name {
+        font-size: 10px;
+        line-height: 10px;
+    }
+}
