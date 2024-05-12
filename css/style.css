@@ -1,0 +1,346 @@
+
+
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 150px 1050px 50px;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m m c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+}
+.header { text-align: center;
+    background-color: #0B66c3;
+    grid-area: h;
+    background-image: url("../images/videomontazha.jpg");
+    color: #FFFFFF;
+
+    font-size: 30px;
+}
+a:link {
+    font-size: 40px;
+    color: #FFFFFF;
+    -webkit-text-stroke: 0.1px #FFFFFF;
+}
+
+a:visited {
+    color: #FFFFFF;
+-webkit-text-stroke: 0.1px #FFFFFF;}
+a:hover {
+    font-size: 45px;
+    color: cornflowerblue;}
+.menu {text-align: center;
+    background-image: url("../images/videomontazha.jpg");
+    grid-area: m;
+    color: #FFFFFF;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 25px;
+}
+.day {
+    background-image: url("../images/den.jpg");
+}
+
+.night {
+    background-image: url("../images/noch.jpg");
+}
+.content {
+    text-align: center;
+
+    grid-area: c;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 500px ;
+
+}
+.content_vert {
+    text-align: center;
+
+    grid-area: c;
+    display: grid;
+    grid-template-rows: 400px 400px;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.img {width: 200px; height: auto;
+        margin-top: 30px;}
+
+.img_vert {
+    width: 400px; height: auto;
+    margin-top: 30px;}
+.text {
+        text-align: center;
+padding-inline: 70px;
+    width: 200px;
+        color: #FFFFFF;
+        font-size: 23px;
+        margin-top: 30px;
+        font-weight: bold;
+
+    }
+.text_vert {
+    text-align: center;
+    padding-inline: 20px;
+    width: 500px;
+    color: #FFFFFF;
+    font-size: 27px;
+    margin-top: 30px;
+    font-weight: bold;
+
+}
+    .film1,.film2,.film3,.film4 {background-color: #87cefa;
+        margin: 20px;
+
+    }
+.film11,.film12,.film13,.film14 {background-color: #87cefa;
+    margin: 10px;
+    width: 500px;}
+
+    .footer { text-align: center; background-color: #0B66c3;
+        grid-area: f;
+    }
+
+@media (max-width: 1800px) {
+    .container {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 150px 1050px 50px;
+        grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m m c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+    }
+    .header { text-align: center;
+        background-color: #0B66c3;
+        grid-area: h;
+        background-image: url("../images/videomontazha.jpg");
+        color: #FFFFFF;
+
+        font-size: 30px;
+
+    }
+    a:link {
+        font-size: 20px;
+        color: #FFFFFF;
+        -webkit-text-stroke: 0.1px #FFFFFF;
+    }
+    .content {
+        text-align: center;
+        background-image: url("../images/fon-setka.jpg");
+        grid-area: c;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 300px ;
+
+    }
+    .content_vert {
+        text-align: center;
+        background-image: url("../images/fon-setka.jpg");
+        grid-area: c;
+        display: grid;
+        grid-template-rows: 400px 400px;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    .menu {text-align: center;
+        background-image: url("../images/videomontazha.jpg");
+        grid-area: m;
+        color: #FFFFFF;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 15px;
+    }
+    .img {width: 100px; height: auto;
+        margin-top: 30px;}
+
+    .img_vert {
+        width: 200px; height: auto;
+        margin-top: 30px;}
+    .text {
+        text-align: center;
+        padding-inline: 5px;
+        width: 200px;
+        color: #FFFFFF;
+        font-size: 13px;
+        margin-top: 30px;
+        font-weight: bold;
+
+    }
+    .text_vert {
+        text-align: center;
+        padding-inline: 20px;
+        width: 500px;
+        color: #FFFFFF;
+        font-size: 27px;
+        margin-top: 30px;
+        font-weight: bold;
+
+    }
+    .film1,.film2,.film3,.film4 {background-color: #87cefa;
+        margin: 20px;
+        width: 200px;
+        }
+
+
+    .footer { text-align: center; background-color: #0B66c3;
+        grid-area: f;
+    }
+
+@media (max-width: 820px) {
+    .container {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 200px 1950px 50px;
+        grid-template-areas:
+        "m m m m m m h h h h h h"
+        "c c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+    }
+    .content {
+        text-align: center;
+        background-image: url("../images/fon-setka.jpg");
+        grid-area: c;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 500px ;
+    }
+        .content_vert {
+            text-align: center;
+            background-image: url("../images/fon-setka.jpg");
+            grid-area: c;
+            display: grid;
+            grid-template-rows: 400px 400px;
+            grid-template-columns: repeat(1, 1fr);
+
+        }
+    .text {
+        text-align: center;
+        padding-inline: 250px;
+        width: 200px;
+        color: #FFFFFF;
+        font-size: 23px;
+        margin-top: 30px;
+        font-weight: bold;
+
+    }
+    .text_vert {
+        text-align: center;
+        padding-inline: 100px;
+        width: 500px;
+        color: #FFFFFF;
+        font-size: 27px;
+        margin-top: 30px;
+        font-weight: bold;
+
+    }
+    .film1,.film2,.film3,.film4 {background-color: #87cefa;
+        margin: 20px;
+        width: 700px;}
+}
+
+@media (max-width: 400px) {
+    .container {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 200px 1950px 50px;
+        grid-template-areas:
+        "m m m m m m h h h h h h"
+        "c c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+    }
+    .content {
+        text-align: center;
+        background-image: url("../images/fon-setka.jpg");
+        grid-area: c;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 400px ;
+    }
+    .content_vert {
+        text-align: center;
+        background-image: url("../images/fon-setka.jpg");
+        grid-area: c;
+        display: grid;
+        grid-template-rows: 400px 400px;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+    .text {
+        text-align: center;
+        padding-inline: 60px;
+        width: 200px;
+        color: #FFFFFF;
+        font-size: 23px;
+        margin-top: 30px;
+        font-weight: bold;
+
+    }
+    .text_vert {
+        text-align: center;
+        padding-inline: 10px;
+        width: 300px;
+        color: #FFFFFF;
+        font-size: 27px;
+        margin-top: 30px;
+        font-weight: bold;
+
+    }
+    .img {width: 150px; height: auto;
+        margin-top: 30px;}
+
+    .img_vert {
+        width: 300px; height: auto;
+        margin-top: 30px;}
+    .film1,.film2,.film3,.film4 {background-color: #87cefa;
+        margin: 20px;
+        width: 330px;}
+
+    .header { text-align: center;
+        background-color: #0B66c3;
+        grid-area: h;
+        background-image: url("../images/videomontazha.jpg");
+        color: #FFFFFF;
+
+        font-size: 15px;
+    }
+    .menu {text-align: center;
+        background-image: url("../images/videomontazha.jpg");
+        grid-area: m;
+        color: #FFFFFF;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 15px;
+    }
+    a:link {
+        font-size: 20px;
+        color: #FFFFFF;
+        -webkit-text-stroke: 0.1px #FFFFFF;
+    }
+
+    a:visited {
+        color: #FFFFFF;
+        -webkit-text-stroke: 0.1px #FFFFFF;}
+    a:hover {
+        font-size: 20px;
+        color: cornflowerblue;
+    }
+
+    @media (max-width: 2100px) {
+        .container {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 200px 1950px 50px;
+            grid-template-areas:
+        "m m m m m m h h h h h h"
+        "c c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+        }
+}
