@@ -1,0 +1,72 @@
+.child1 {
+    background-color:  aqua;
+    height: 40px;
+    width: 40px;
+}
+.child2 {
+    background-color:  aqua;
+    height: 40px;
+    width: 40px;
+    text-align: right;
+}
+.child3 {
+    background-color:  aqua;
+    height: 20px;
+    width: 40px;
+    text-align: right;
+}
+.child4 {
+    background-color:  aqua;
+    height: 20px;
+    width: 40px;
+    text-align: right;
+}
+.link {
+    background-color:  aqua;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 60px;
+    width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+body {
+    background-color: black;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    margin: 20px;
+}
+
+header {
+    display: flex;
+    padding: 60px;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-around;
+}
+.foto {
+    height: 600px;
+    width: 600px;
+}
+
+.img, .about, .course {
+    text-align: left;
+}
+
+.info {
+    display: flex;
+    padding: 60px;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.cat1, .cat2, .cat3,.cat4, .dog1, .dog2, .dog3,.dog4 {
+    padding: 20px;
+    background-color: burlywood;
+}
+
+.img1, .img2, .img3, .img4 {
+    height: 500px;
+    width: 700px;
+}
+
+.cats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.img5, .img6, .img7, .img8 {
+    height: 1800px;
+    width: 1900px;
+}
+
+.dogs {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr 1fr);
+    grid-gap: 60px;
+}
+
+@media screen and (min-width:400px) {
+    .cats {
+        flex: 1;
+    }
+}
+@media screen and (min-width:400px) {
+    .dogs {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (min-width:800px) {
+    .dogs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
