@@ -1,0 +1,21 @@
+body {
+    background-color: gray;
+    color: white;
+}
+.container-flex div {
+    background-color: blueviolet;
+    color: white;
+}
+.container-grid div {
+    background-color: blueviolet;
+    color: white;
+}
+.one{
+    background-color: blueviolet;
+}
+.two{
+    background-color: blueviolet;
+}
+.three {
+    background-color: blueviolet;
+}

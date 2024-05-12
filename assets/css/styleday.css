@@ -1,0 +1,12 @@
+body {
+    background-color: lightyellow;
+    color: black;
+}
+.container-flex div {
+    background-color: white;
+    color: black;
+}
+.container-grid div {
+    background-color: white;
+    color: black;
+}

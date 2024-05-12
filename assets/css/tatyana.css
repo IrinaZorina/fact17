@@ -1,0 +1,23 @@
+p{
+    text-align: center;
+}
+.container div {
+    padding-top: 40px;
+}
+.one{
+    background-color: lightyellow;
+    float: left;
+}
+.two{
+    background-color: lightgreen;
+    float: left;
+}
+.three{
+    background-color: orange;
+    float: left;
+}
+.one, .two, .three{
+    height: 500px;
+    width: 33%;
+    border: 1px solid black;
+}
