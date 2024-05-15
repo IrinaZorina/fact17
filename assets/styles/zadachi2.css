@@ -1,0 +1,79 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.header{
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: black;
+    z-index: 100;
+    box-shadow: rgba(255,255,255,.8) 0 2px 6px -3px;
+  }
+  .vodorod{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.vodorod:hover{
+    color: #009efd;
+    text-shadow: 1px 1px 2px #009efd;
+    text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
+}
+.logo{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.logo:hover{
+    color: #009efd;
+    text-shadow: 1px 1px 2px #009efd;
+    text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
+}
+.zadachi{
+    text-decoration: none;
+    color: #009efd;
+    text-shadow: 1px 1px 2px #009efd;
+    text-align: center;
+    text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
+  }
+  .footer{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    bottom: 0;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 60px;
+    background-color: black;
+    z-index: 100;
+      box-shadow: rgba(255,255,255,.8) 6px 2px 6px 2px;
+    }
+    .foot{
+      color: white;
+    }
+    
+  
+  main{
+    color: white;
+  }
+  .zadanie{
+    color: #009efd;
+  }
