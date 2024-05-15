@@ -5,7 +5,6 @@ body {
     background-color: black;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    perspective: 500px;
 }
 .header{
     width: 100%;
@@ -20,28 +19,46 @@ body {
     background-color: black;
     z-index: 100;
     box-shadow: rgba(255,255,255,.8) 0 2px 6px -3px;
-}
-.vodorod2{
+  }
+.vodorod{
     text-decoration: none;
     color: #009efd;
     text-align: center;
     text-shadow: 1px 1px 2px #009efd;
+    text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
 }
-.logo2{
+.logo{
     text-decoration: none;
     color: white;
     text-align: center;
 }
-.logo2:hover{
+.logo:hover{
     color: #009efd;
     text-shadow: 1px 1px 2px #009efd;
+    text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
 }
-.container2{
+.zadachi{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
+  .zadachi:hover{
+    color: #009efd;
+    text-shadow: 1px 1px 2px #009efd;
+    text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
+  }
+.container{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     padding: 20px;
 }
-.cell2{
+.cell{
     border: 1px solid white;
     padding: 5px;
 }
@@ -91,3 +108,19 @@ body {
         margin-bottom: auto;
     }
 }
+.footer{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+    background-color: black;
+    z-index: 100;
+    box-shadow: rgba(255,255,255,.8) 6px 2px 6px 2px;
+  }
+  .foot{
+    color: white;
+  }
