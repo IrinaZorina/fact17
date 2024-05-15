@@ -9,7 +9,7 @@
     <div class="header"><h1>Новинки кино 2024</h1></div>
     <div class="menu"><h2>Меню:</h2>
         <ul>
-            <li><a href="">Вертикаль</a></li>
+            <li><a href="index_vert.php">Вертикаль</a></li>
             <li><a href="index.php">Горизонталь</a></li>
             <li><a href="slide25_1.php">Дз 25.1</a></li>
             <li><a href="slide25_2.php">Дз 25.2</a></li>
