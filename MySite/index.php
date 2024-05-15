@@ -1,13 +1,4 @@
 
-<?php
-$time = date ("G");
-if ($time >= 8 && $time < 18) {
-	$time = "day";}
-else {
-	$time = "night";
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +7,10 @@ else {
 	<title>Мой сайт</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
+	<?php	include "time.php"?>
 <body class="<?php echo $time?>">
 
-
-
-	<header>
-		<div class="heade">
-			<p class="<?php echo $time?>">Это моя страница!!!</p>
-		</div>
-	</header>
-	
+	<?php include "header.php"?>
 
 	<main>
 
@@ -79,5 +64,7 @@ else {
 		</div>
 
 	</main>
+
+	<?php include "footer.php"?>
 </body>
 </html>
