@@ -15,14 +15,11 @@ else $img="night";
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class='<?=$img;?>'>
-<div class="container">
-    <div class="header"><h1>Новинки кино 2024</h1></div>
-    <div class="menu"><h2>Меню:</h2>
-        <ul>
-            <li><a href="">Вертикаль</a></li>
-            <li><a href="index.php">Горизонталь</a></li>
-            </ul>
-    </div>
+<?php
+include_once 'header.php';
+
+?>
+
 
     <div class="content_vert">
         <div class="film11"><img src="images/panda_vert.jpg" class="img_vert">
@@ -44,7 +41,9 @@ else $img="night";
 
 
     </div>
-    <div class="footer">Copyright © 2024</div>
+    <?php
+    include_once 'footer.php';
+    ?>
 </div>
 
 </body>
