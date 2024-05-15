@@ -1,13 +1,5 @@
 <?php
-define('NIGHT_HOURS', [20, 8]);
-date_default_timezone_set('Asia/Yekaterinburg');
-
-$currentHour = date("H");
-
-$theme = 'day';
-if ($currentHour >= NIGHT_HOURS[0] || $currentHour < NIGHT_HOURS[1]) {
-  $theme = 'night';
-}
+require_once 'includes/functions.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,21 +8,12 @@ if ($currentHour >= NIGHT_HOURS[0] || $currentHour < NIGHT_HOURS[1]) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>Главная страница</title>
   </head>
-  <body class='<?=$theme;?>'>
-    <header>
-      <div class='current-time'>
-        <img src="/img/icon_<?=$theme;?>.png" alt="Время суток">
-      </div>
-      <p class="header-text">Header</p>
-      <div class="element">
-        <span class="element-letter">N</span>
-        <span class="element-number">7</span>
-        <span class="element-weight">14,0067</span>
-        <span class="element-name">Азот</span>
-      </div>
-    </header>
+  <body class='<?= getCurrentTheme(); ?>'>
+    <?php 
+      require_once 'templates/header.php'; 
+    ?>
     <main>
       <section class="info-container">
         <img class="photo" src="img/photo.jpg" alt="Фотография" />
@@ -109,5 +92,8 @@ if ($currentHour >= NIGHT_HOURS[0] || $currentHour < NIGHT_HOURS[1]) {
         </li>
       </ul>
     </main>
+    <?php 
+      require_once 'templates/footer.php'; 
+    ?>
   </body>
 </html>
