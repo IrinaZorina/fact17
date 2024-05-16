@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="keywords" content="php,html,css,bitrix">
-	<title>ozerov</title>
+	<title>element</title>
 	<?php
-	$time = 7;
+	$time = 8;
 	if ($time >= 8 && $time < 20)
 	{
 		echo '<link rel="stylesheet" href="style-day.css">';

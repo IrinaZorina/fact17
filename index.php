@@ -1,24 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="keywords" content="php,html,css,bitrix">
-	<title>ozerov</title>
-	<?php
-	$time = 7;
-	if ($time >= 8 && $time < 20)
-	{
-		echo '<link rel="stylesheet" href="assets/css/style-day.css">';
-	}else
-	{
-		echo '<link rel="stylesheet" href="assets/css/style-night.css">';
-	}
-	?>
-</head>
-<body>
-<header>
-	<div class="element"><a href="html/element.php">Цинк</a></div>
-</header>
+<?php include 'html/header.php' ?>
 	<div>
 		<div class="info">
 			<div class="img"><img class="foto" src="assets/media/foto.png"></div>
@@ -45,6 +25,5 @@
 			<div class="dog4"><img class="img8" src="assets/media/dog4.png" alt="#"><figcaption>Немецкая овчарка</figcaption></div>
 		</div>
 	</div>
-<footer>footer</footer>
-</body>
-</html>
+<?php include 'html/footer.php'?>
+
