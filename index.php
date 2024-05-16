@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <title>О себе</title>
-    <link rel="stylesheet" href="assets/css/tatyana.css">
-    <?php
-        $currentHour = (int)date('H');
-        if ( $currentHour > 8 && $currentHour < 20 ) {
-        //day
-    ?>
-    <link rel="stylesheet" href="assets/css/styleday.css">
-    <?php } else {
-        // night
-    ?>
-    <link rel="stylesheet" href="assets/css/stylenight.css">
-    <?}?>
-    <link rel="stylesheet" href="assets/css/stylesflex.css">
-</head>
-<body>
+<?php
+include("header.php");
+?>
+<a href="http://fact17/phpcycles.php">Задачи</a>
 <div class="container">
     <div class="one">
         <center><img width="70%" src="Images/image.jpg"></center>
@@ -81,5 +64,5 @@
         <p>Па́мятник Ми́нину и Пожа́рскому — копия памятника, установленного на Красной площади в Москве</p>
     </div>
 </div>
-</body>
-</html>
+<?php
+include("footer.php");
