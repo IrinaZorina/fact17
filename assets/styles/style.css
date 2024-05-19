@@ -19,43 +19,35 @@ img {
   justify-content: space-around;
   align-items: center;
   font-size: 24px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   background-color: white;
   z-index: 100;
   box-shadow: rgba(0,0,0,.8) 0 2px 6px -3px;
 }
-.logo{
-  text-decoration: none;
-  color: #009efd;
-  text-align: center;
-  text-shadow: 1px 1px 2px #009efd;
-  text-decoration: underline;
-  text-underline-position: under;
-  text-decoration-thickness: 2px;
-}
-.vodorod{
+.logo, .vodorod, .zadachi{
   text-decoration: none;
   color: black;
   text-align: center;
 }
-.vodorod:hover{
+.logo:hover, .vodorod:hover, .zadachi:hover{
   color: #009efd;
-  text-shadow: 1px 1px 2px #009efd;
-  text-decoration: underline;
-  text-underline-position: under;
-  text-decoration-thickness: 2px;
-}
-.zadachi{
-  text-decoration: none;
-  color: black;
   text-align: center;
-}
-.zadachi:hover{
-  color: #009efd;
   text-shadow: 1px 1px 2px #009efd;
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-thickness: 2px;
+}
+.call-button {
+  background-color: #009efd;
+  border: solid black 2px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 .hero1{
   min-height: 60vh;
@@ -119,7 +111,7 @@ img {
   justify-content: center;
   overflow: hidden;
   border:10px solid white;
-  background-image: linear-gradient(180deg, rgb(170, 0, 255) 0%, #009efd 100%);
+  background-image: linear-gradient(180deg, #001efd 0%, #009efd 100%);
   animation: ava-animate 6s infinite alternate;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5  );
   z-index: 0;
@@ -175,9 +167,6 @@ img {
   text-align: center;
   color: black;
 }
-.car:hover{
-  transform: rotateY(180deg);
-}
 .container4 {
   display: flex;
   justify-content: center;
@@ -194,6 +183,73 @@ img {
   border: 1px solid black;
   margin: 10px;
   flex-basis: 32%;
+}
+.footer{
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24px;
+  background-color: white;
+  z-index: 100;
+    box-shadow: rgba(0,0,0,.8) 6px 2px 6px 2px;
+  }
+  .foot{
+    color: black;
+  }
+  .container5{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 20px;
+}
+.cell{
+    border: 1px solid black;
+    padding: 5px;
+}
+.symbol{
+    display: grid;
+    grid-area: symbol;
+    font-size: 26px;
+}
+.name{
+    display: grid;
+    grid-area: name;
+    font-size: 26px;
+}
+.number{
+    grid-area: number;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: grid;
+    font-size: 20px;
+}
+.atomic-mass{
+    grid-area: atomic-mass;
+    justify-content: flex-end;
+    display: grid;
+    font-size: 20px;
+}
+.cell-main{
+    display: grid;
+    grid-template-areas:
+    "symbol . number"
+    ". . atomic-mass"
+    "name . ."  ;
+    padding: 10px;
+    background: #009efd;
+    box-shadow:
+            inset rgba(0,0,0,.6) 0 -3px 8px,
+            inset rgba(252,255,255,.7) 0 3px 8px,
+            rgba(0,0,0,.8) 0 3px 8px -3px;
+}
+.cell-main:hover{
+    transition: all 1s ease-in-out;
+    border-radius: 15%;
+}
+.zadanie{
+  color: #009efd;
 }
 @media screen and (max-width: 1200px) {
   .container3 {
@@ -232,6 +288,18 @@ img {
     font-size: 14px;
     margin-bottom: auto;
   }
+  .footer{
+    font-size: 10px;
+    margin-bottom: auto;
+  }
+  .vk{
+    height: 40px;
+    width: 40px;
+  }
+  .tg{
+    height: 40px;
+    width: 40px;
+  }
 }
 @media screen and (max-width: 600px) {
   .container3 {
@@ -248,18 +316,3 @@ img {
     flex-basis: 75%;
   }
 }
-.footer{
-  width: 100%;
-  padding: 10px 0;
-  display: flex;
-  bottom: 0;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 24px;
-  background-color: white;
-  z-index: 100;
-    box-shadow: rgba(0,0,0,.8) 6px 2px 6px 2px;
-  }
-  .foot{
-    color: black;
-  }

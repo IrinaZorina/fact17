@@ -8,25 +8,15 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="icon" href="media/vizitka.png">
-  </link>
   <?php
-  date_default_timezone_set('Asia/Yekaterinburg'); //Выставил наш часовой пояс
-  $hour = date("H");
-
-  if ($hour >= 8 && $hour < 20) {
-    echo "<link rel='stylesheet' href='styles/vizitka.css'>";
-  } else {
-    echo "<link rel='stylesheet' href='styles/vizitka2.css'>";
-  }
+  include 'inserts/time.php';
   ?>
 </head>
 
 <body>
-
   <?php
-  include 'header.php';
+  include 'inserts/header.php';
   ?>
-
   <main>
     <div class="hero1">
       <div class="container hero__container">
@@ -39,7 +29,8 @@
             <p class="hero__subtitle">
               Я учусь в МГТУ в институте автоматизированных систем на направлении "Разработка игр и приложений".<br>
               В университете я уже изучал html и css, но было это на первом курсе.<br>
-              Хочется в полном размере изучить данный курс и устроиться в компанию "Факт".</p>
+              Хочется в полном размере изучить данный курс и устроиться в компанию "Факт".
+            </p>
             <p class="hero__description">
               Курс нравится мне тем, что в нём обучающимся во время лекции даётся задания
               для самостоятельного выполнения, а позже эти задания разбираются с преподавателем.<br>
@@ -58,7 +49,7 @@
     <br>
     <br>
     <div>
-      <h1 class="car">Бренд авто</h1>
+      <h1 class="car">Бренд авто(grid)</h1>
     </div>
     <div class="container3">
       <div class="car1">
@@ -80,7 +71,7 @@
     </div>
     <div class="hero3">
       <div>
-        <h1 class="odeshda">Бренд одежды</h1>
+        <h1 class="odeshda">Бренд одежды(flex)</h1>
       </div>
       <div class="container4">
         <div class="odeshda1">
@@ -103,11 +94,15 @@
       </div>
     </div>
     <br>
+    </main>
+
     <?php
-    include 'footer.php';
+    include 'inserts/footer.php';
     ?>
-  </main>
+  
+  <?php
+    include 'inserts/script.php';
+    ?>
 
 </body>
-
 </html>
