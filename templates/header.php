@@ -4,6 +4,7 @@
   </div>
   <p class="header-text">Header</p>
   <a class="header-link" href="cycles.php">Циклы</a>
+  <a class="header-link" href="arrays.php">Массивы</a>
   <div class="element">
     <span class="element-letter">N</span>
       <span class="element-number">7</span>

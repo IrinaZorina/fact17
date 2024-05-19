@@ -372,6 +372,21 @@ footer .footer-social {
 
 }
 
+.answer-img {
+    width: 300px;
+}
+
+.answer td {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    text-align: center;
+    width: 30px;
+}
+
+body.night .answer td {
+    border: 1px solid #ffffff;
+}
+
 @media (min-width: 1281px) and (max-width: 1440px) {
     .user-info .about,
     .user-info .review {
