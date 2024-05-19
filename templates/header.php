@@ -14,6 +14,7 @@
                 </button>
                 <li class="nav-list__item"> <a class="link link--white" href="index.php">Обо мне</a></li>
                 <li class="nav-list__item"> <a class="link link--white" href="loop.php">Циклы</a></li>
+                <li class="nav-list__item"> <a class="link link--white" href="array.php">Массивы</a></li>
             </ul>
         </nav>
     </div>
