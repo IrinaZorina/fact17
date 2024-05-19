@@ -249,5 +249,8 @@ require_once 'includes/functions.inc.php';
             ?>
         </div>
     </main>
+    <?php 
+      require_once 'templates/footer.php'; 
+    ?>
 </body>
 </html>
