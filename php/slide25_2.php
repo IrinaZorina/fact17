@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <?php
-include_once 'header.php';
+include_once '../header.php';
 
 ?>
 <div>
@@ -35,7 +35,7 @@ echo "<br>Количество итераций: $i";
 <br>
 </div>
 <?php
-include_once 'footer.php';
+include_once '../footer.php';
 ?>
 </div>
 
