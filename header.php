@@ -10,7 +10,7 @@
     <div class="menu"><h2>Меню:</h2>
         <ul>
             <li><a href="../php/index_vert.php">Вертикаль</a></li>
-            <li><a href="../index.php">Горизонталь</a></li>
+            <li><a href="/index.php">Горизонталь</a></li>
             <li><a href="../php/slide25_1.php">Дз 25.1</a></li>
             <li><a href="../php/slide25_2.php">Дз 25.2</a></li>
             <li><a href="../php/slide25_3.php">Дз 25.3</a></li>
