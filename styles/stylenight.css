@@ -1,0 +1,18 @@
+body{
+    background-color:black;
+
+}
+.header {
+color: white;
+}
+.flex-conteiner,.flex-conteiner1,.flex-conteiner2,.flex-conteiner3,.flex-conteiner4{
+color: white;
+}
+.conteiner13,.conteiner12{
+background-color: black;
+color: white;
+}
+.row,.row1,.row2,.row3{
+    background-color: black;
+    color: white;  
+}
