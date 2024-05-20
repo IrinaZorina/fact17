@@ -1,0 +1,141 @@
+body{background-color: rgb(255, 255, 255);}
+.header{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    height: 50px;
+    width: 100%;}
+
+.aboutMe{
+    display: grid;
+    margin: 10px;
+    justify-content: center;
+    grid-template-columns: 350px 1fr 1fr;
+    grid-template-rows: 50px 450px;
+    grid-template-areas: 
+    'sidebar header header'
+    'sidebar mainone maintwo';}
+.foto{
+    grid-area: sidebar;}
+.imgFoto{
+    height: 500px;
+    width: 300px;}
+.myJob{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+    grid-area: mainone;}
+.myHobby{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+    grid-area: maintwo;}    
+.name{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    grid-area: header;}
+.containerford{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;}    
+.imgford{
+    margin: 15px;
+    height: 220px;
+    width: 300px;}
+.headford{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;}
+.textford{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;}
+.containerchevrolet{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;}
+.imgchevrolet{
+    margin: 15px;
+    height: 350px;
+    width: 500px;}
+.textchevrolet{
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 20px;}
+.headchevrolet{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: bolder;
+    grid-column: span 2;}
+
+.potassium{
+    display: grid;
+    grid-template-columns: repeat(5, 15px);
+    grid-template-rows: repeat(3, 15px);
+    grid-template-areas: 
+    'header . . .  sidebar'
+    'header .  main main main'
+    'footer footer footer . . ';}
+.a{
+    font-size: 30px;
+    font-weight: bold;
+    grid-area: header;}
+.b{
+    grid-area: sidebar;}
+.c{
+    grid-area: main;}
+.d{
+    grid-area: footer;}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    grid-template-rows: repeat(3, 20px) 30px;
+    grid-template-areas:
+    'contacts contacts contacts . .'
+    'telephone telephone telephone telephone telephone'
+    'socialNetworks socialNetworks socialNetworks . .'
+    'vklogo telegramlogo . . .';}
+.contacts, .socialNetworks, .telephone{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: 15px;
+}
+.contacts{
+    grid-area: contacts;
+}
+.telephone{
+    grid-area: telephone;
+}
+.socialNetworks{
+    grid-area: socialNetworks;
+}
+.imgtelegram{
+    height: 30px;
+    width: 30px;
+}
+.vklogo{
+    grid-area: vklogo;
+}
+.telegramlogo{
+    grid-area: telegramlogo;
+}
+
+@media screen and (max-width: 500px){
+    .aboutMe {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+}        
