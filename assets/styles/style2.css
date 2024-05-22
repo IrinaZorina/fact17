@@ -26,12 +26,12 @@ img {
   z-index: 100;
   box-shadow: rgba(255,255,255,.8) 0 2px 6px -3px;
 }
-.logo, .vodorod, .zadachi{
+.logo, .vodorod, .cycles, .arrays, .string{
   text-decoration: none;
   color: white;
   text-align: center;
 }
-.logo:hover, .vodorod:hover, .zadachi:hover{
+.logo:hover, .vodorod:hover, .cycles:hover, .arrays:hover, .string:hover{
   color: #009efd;
   text-align: center;
   text-shadow: 1px 1px 2px #009efd;
@@ -42,7 +42,7 @@ img {
 .call-button {
   background-color: #009efd;
   border: solid white 2px;
-  color: white;
+  color: black;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -56,6 +56,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 140px;
 }
 .container{
   display: grid;
@@ -195,6 +196,7 @@ img {
   align-items: center;
   font-size: 24px;
   background-color: black;
+  margin-top: 30px;
   z-index: 100;
     box-shadow: rgba(255,255,255,.8) 6px 2px 6px 2px;
   }
@@ -205,6 +207,11 @@ img {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     padding: 20px;
+    margin-bottom: 550px;
+}
+.container6{
+  display: flex;
+  justify-content: center;
 }
 .cell{
     border: 1px solid white;
@@ -253,6 +260,24 @@ img {
 .zadanie{
   color: #009efd;
 }
+table {
+  width: 650px;
+  border: 7px solid #009efd;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+td {
+  text-align: center;
+	padding: 10px;
+	border: 3px solid #009efd;
+}
+ th {
+  text-align: center;
+  padding: 10px;
+	border: 3px solid #009efd;
+ }
 @media screen and (max-width: 1200px) {
   .container3 {
     grid-template-columns: 1fr 1fr;
@@ -287,7 +312,7 @@ img {
     justify-self: center;
   }
   .header{
-    font-size: 14px;
+    font-size: 10px;
     margin-bottom: auto;
   }
   .footer{
@@ -301,6 +326,10 @@ img {
   .tg{
     height: 40px;
     width: 40px;
+  }
+  .call-button {
+    font-size: 10px;
+    padding: 10px 21px;
   }
 }
 @media screen and (max-width: 600px) {

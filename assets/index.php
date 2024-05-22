@@ -26,15 +26,34 @@
         <div class="hero__about">
           <h1 class="hero__title">Пазуха Вячеслав</h1>
           <div class="container2">
-            <p class="hero__subtitle">
-              Я учусь в МГТУ в институте автоматизированных систем на направлении "Разработка игр и приложений".<br>
-              В университете я уже изучал html и css, но было это на первом курсе.<br>
-              Хочется в полном размере изучить данный курс и устроиться в компанию "Факт".
-            </p>
-            <p class="hero__description">
-              Курс нравится мне тем, что в нём обучающимся во время лекции даётся задания
-              для самостоятельного выполнения, а позже эти задания разбираются с преподавателем.<br>
-            </p>
+          
+<?php
+$text = "Я учусь в МГТУ в институте автоматизированных систем на направлении Разработка игр и приложений.<br>
+Своё изучение html, css, js и php я начал ещё в университете на первом курсе.<br>
+После изучения курса планирую стать веб-разработчиком и устроиться в компанию Факт.";
+$color = "#009efd";
+echo "<p class 'hero__subtitle' style='color:" . htmlspecialchars($color) . ";'>$text</p>";
+?>
+
+<?php
+$text = "Курс нравится мне тем, что в нём обучающимся во время лекции даётся  множество заданий
+для самостоятельного выполнения, а позже эти задания разбираются с преподавателем.<br>";
+$color1 = "#009efd";
+$color2 = "#680BAB";
+$text2 = " ";
+$words = explode(" ", $text);
+$coloredText = "";
+
+for ($i = 0; $i < count($words); $i++) {
+  if ($i % 2 == 0) { 
+    $coloredText .= "<span class 'hero__description' style='color: $color1; display: inline;'> $words[$i] </span>";
+  } else {
+    $coloredText .= "<span class 'hero__description' style='color: $color2; display: inline;'> $words[$i] </span>";
+  }
+}
+echo "<p class 'hero__description'>$coloredText</p>";
+?>
+
           </div>
           <div class="hero__links">
             <a class="hero__link" href="https://vk.com/real_slavik" target="_blank"><img src="media/vk.png"></img></a>
@@ -42,12 +61,6 @@
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div>
       <h1 class="car">Бренд авто(grid)</h1>
     </div>
@@ -94,15 +107,64 @@
       </div>
     </div>
     <br>
-    </main>
+    <div class="container6">
+    <table>
+<tr>
+  <th><p><b class="zadanie">Количество дней</b></p></th>
+<th><b class="zadanie">Количество букв</b></p></th>
+<th><p><b class="zadanie">Количество слов</b></p></th>
+</tr>
+<tr>
+  <td><?php
+$date1 = '17.07.2003'; //День рождения
+$date2 = date("d.m.Y");; // Актуальная дата
+echo "Дата рождения: $date1";
+echo "<br>";
+echo "Актуальная дата: $date2";
+echo "<br>";
 
-    <?php
-    include 'inserts/footer.php';
-    ?>
-  
+$time1 = strtotime($date1); //преобразует в секунды
+$time2 = strtotime($date2);
+
+
+$time3 = $time2 - $time1;
+
+$days = round($time3 / (60 * 60 * 24));
+
+echo "Дней между датами: $days";
+
+?>
+</td>
+<td><?php
+
+$file = 'index.php'; // Файл с текстом
+$str = file_exists($file) ? file_get_contents($file) : '';
+$patt = '~(?<vowels>[аеёиоуыэюя])|(?<conson>[бвгджзйклмнпрстфхцчшщъь])~iu';
+preg_match_all($patt, $str , $a);
+
+$vowels = count(array_filter($a['vowels']));
+$conson = count(array_filter($a['conson']));
+
+echo 'Гласных: '. $vowels .'<br />Согласных: '. $conson;
+?></td>
+<td><?php
+$file = 'index.php'; // Файл с текстом
+$str = file_exists($file) ? file_get_contents($file) : '';
+$words = explode(" ", $str);
+$words = array_filter($words);
+$wordCount = count($words);
+echo "Слов: " . $wordCount;
+?>
+</td>
+</tr>
+</table>
+</div>
+  </main>
   <?php
-    include 'inserts/script.php';
-    ?>
-
+  include 'inserts/footer.php';
+  ?>
+  <?php
+  include 'inserts/script.php';
+  ?>
 </body>
 </html>

@@ -52,10 +52,10 @@
     <p><b>Результат</b></p>
     <?php
     $grades= [
-    'Русский' => [random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5)],
     'Математика' => [random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5)],
-    'Физра' => [random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5)],
-    'Литература' => [random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5)],
+    'Физика' => [random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5)],
+    'Химия' => [random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5)],
+    'Информатика' => [random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5), random_int(2,5)],
     ];
     $avggrade = [];
 
