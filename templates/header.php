@@ -1,10 +1,20 @@
+<?php
+    $url = $_SERVER['REQUEST_URI'];
+    $current_url = substr($url, strrpos($url, '/'));
+    $index_url = '/';
+?>
+
 <header>
   <div class='current-time'>
     <img src="/img/icon_<?= getCurrentTheme(); ?>.png" alt="Время суток">
   </div>
   <p class="header-text">Header</p>
+  <?php if ($current_url != $index_url): ?>
+    <a class="header-link" href="/">Главная страница</a>
+  <?php endif; ?>
   <a class="header-link" href="cycles.php">Циклы</a>
   <a class="header-link" href="arrays.php">Массивы</a>
+  <a class="header-link" href="lines.php">Строки</a>
   <div class="element">
     <span class="element-letter">N</span>
       <span class="element-number">7</span>
