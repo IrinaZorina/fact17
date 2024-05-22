@@ -3,6 +3,7 @@
     <ul>
      <li><a href="cycles.php" style="color:black;"> Циклы</a></li>
     <li><a href="arrays.php"style="color:black;">Массивы</a></li>
+    <li><a href="line.php"style="color:black;">Строки</a></li>
 </ul>
 </div>
 </header>
