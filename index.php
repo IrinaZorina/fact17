@@ -1,4 +1,4 @@
-<?php include 'html/header.php' ?>
+<<?php include 'html/header.php' ?>
 	<div>
 		<div class="info">
 			<div class="img"><img class="foto" src="assets/media/foto.png"></div>
@@ -26,4 +26,9 @@
 		</div>
 	</div>
 <?php include 'html/footer.php'?>
+
+
+
+
+
 

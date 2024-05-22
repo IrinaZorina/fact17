@@ -19,4 +19,5 @@
 <header>
 	<div class="element"><a href="html/element.php">Элемент</a></div>
 	<div class="cycles"><a href="html/cycles.php">Циклы</a></div>
+	<div class="arrays"><a href="html/arrays.php">Массивы</a></div>
 </header>
