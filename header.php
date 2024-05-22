@@ -17,6 +17,8 @@
             <li><a href="../php/massiv_1.php">Массив 1</a></li>
             <li><a href="../php/massiv_2.php">Массив 2</a></li>
             <li><a href="../php/massiv_3.php">Массив 3</a></li>
+            <li><a href="../php/my.php">Строки</a></li>
+            <li><a href="../php/data.php">Дата</a></li>
         </ul>
     </div>
 </body>
