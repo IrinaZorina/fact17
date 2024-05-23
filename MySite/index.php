@@ -10,7 +10,7 @@
 	<?php	include "time.php"?>
 <body class="<?php echo $time?>">
 
-	<?php include "header.php"?>
+	<?php include "header/header.php"?>
 
 	<main>
 
@@ -18,8 +18,8 @@
 			<div class="photo"><img class="photo" src="media/photo_2024-04-16_20-03-33.jpg" alt="Это я"></div>
 			<div>
 				<div class="name"><p class="<?php echo $time?>">Сергей Иванов</p></div>
-				<div class="target1"><p class="<?php echo $time?>" >Здраствуйте! Сейчас прохожу службу в огранах. Планирую в ближайшем будующем выйти на заслуженую пенсию по выслуге лет. Увлекаюсь спортивными мероприятиями (футбол, хокей), так же иногда играю в компьютерные игры. Всегда смотрел с интересом в сторону IT. Хотелось бы в будущем работать из любой точки.</p></div>
-				<div class="target2"><p class="<?php echo $time?>">Хотелось бы освоить данный курс. И в дальнейшем продолжить учится програмированию на языке PHP.</p></div>
+				<div class="target1"><p class="<?php echo $time?>" ><?php include "text/About_Me.php"?></p></div>
+				<div class="target2"><p class="<?php echo $time?>"><?php include "text/expectation.php"?></p></div>
 			</div>
 		</div>
 
@@ -62,9 +62,12 @@
 				<div class="text"><p class="<?php echo $time?>">Парк Победы</p></div>
 			</div>
 		</div>
+	<div class="numbers"><?php include "DZ/numbers.php"?></div>
+		
 
 	</main>
 
-	<?php include "footer.php"?>
+	<?php include "footer/footer.php"?>
+	
 </body>
 </html>

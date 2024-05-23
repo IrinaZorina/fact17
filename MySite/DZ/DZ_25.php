@@ -14,8 +14,8 @@ include "../time.php"
 <body class="<?php echo $time?>">
 	
 
-<div class = "dz_25">
-		<div><p>Слайд №25</p></div>
+<div>
+		<div><p>Циклы</p></div>
 
 		<div> <p>Задача №1 <br>
 			Выведите столбец чисел от 5 до 13.</p>
