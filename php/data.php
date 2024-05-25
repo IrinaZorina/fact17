@@ -1,9 +1,15 @@
 <?php
-if (isset($_POST['date1']) ) {
-    $date1 = date_create($_POST['date1']);
 
-    $date2 = date_create(date('Y-m-d'));
-    $result = date_diff($date1, $date2);
+$arr=isset($_POST['date1']);
+function tim($arr)
+{
+    if ($arr) {
+        $date1 = date_create($_POST['date1']);
+
+        $date2 = date_create(date('Y-m-d'));
+        $result = date_diff($date1, $date2);
+        return $result;
+    }
 }
 
 
@@ -29,6 +35,7 @@ include_once '../header.php';
     <input type="submit" name="otv" />
 </form><br>
 <?php
+$result=tim($arr);
 echo "Сегодня : ".date('d-m-Y');
 if (isset($_POST['date1']) ) {
     echo "<br>Разница: " . $result->days ." дн(я)ей" ;
