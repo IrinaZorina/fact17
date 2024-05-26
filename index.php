@@ -18,43 +18,22 @@ require_once 'includes/functions.inc.php';
     <main>
       <div class='answer'>
         <?php
-          $homepage = file_get_contents('index.php');
-          $homepageContent = strip_tags($homepage);
-          $cleanString = str_replace(array("\r", "\n"), '', $homepageContent);
-          
-          $wordsList = array_filter(explode(' ', $cleanString));
-          $wordsCount = 0;
-          foreach($wordsList as $item) {
-            if (strlen($item) > 0) {
-              $wordsCount++;
-            }
+          echo 'Количество слов на странице: ' . getWordsOnPageCount('index.php') . '<br>';
+          echo '<br>Количество гласных на странице:<br>';
+          print_r(getVowelsCount('index.php'));
+          echo '<br>';
+        ?>
+        <form class='date-interval-form' method='post' action='index.php'>
+          <label for='final-date'>Введите дату:</label>
+          <input type='date' id='final-date' name='final-date' value='<?= htmlspecialchars($_POST['final-date'] ?? '') ?>'>
+          <input type='submit' value='Отправить'>
+        </form>
+        <?php
+          echo 'Количество дней между сегодняшним днем и указанной датой: ';
+          $dateInterval = getDateInterval();
+          if (isset($dateInterval)) {
+            echo $dateInterval;
           }
-
-          echo 'Количество слов на странице: ' . $wordsCount . '<br>';
-
-          $vowelsArray = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
-          $vowelsCount = [];
-
-          foreach ($vowelsArray as $key => $item) {
-            $vowelsCount[$key] = mb_substr_count($homepageContent, $item);
-          }
-
-            echo '<br>Гласные буквы:<br>';
-            print_r($vowelsArray);
-            echo '<br>Количество гласных на странице:<br>';
-            print_r($vowelsCount);
-            echo '<br>';
-
-            $strDateStart = '11-04-1990';
-            $strDateFinal ='22-05-2024';
-
-            function getDateTime($strDate) {
-                return DateTime::createFromFormat('d-m-Y', $strDate);
-            }
-
-            $dateInterval = getDateTime($strDateStart)->diff(getDateTime($strDateFinal))->days;
-            
-            echo "<br>С даты рождения $strDateStart по сегодняшний год $strDateFinal прошло $dateInterval дней.";
         ?>
       </div>
       <section class='info-container'>
@@ -63,50 +42,43 @@ require_once 'includes/functions.inc.php';
         <div class='user-info'>
           <span class='name'>Дмитрий Кречетников</span>
           <?php 
-            $userInfo =
-              '<div class=\'about\'>
-                  <p class=\'about-title\'>Работа:</p>
-                  <ul class=\'about-list\'>
-                    <li>Маленькая провинциальная веб-студия.</li>
-                  </ul>
-                  <p class=\'about-title\'>Хобби:</p>
-                  <ul class=\'about-list\'>
-                    <li>Веб-технологии;</li>
-                    <li>Музыка;</li>
-                    <li>Кино;</li>
-                    <li>Фотография;</li>
-                    <li>Рисование;</li>
-                    <li>Спорт.</li>
-                  </ul>
-              </div>';
-            
-            $colorText = 'Маленькая провинциальная веб-студия.';
+             $colorText = 'Маленькая провинциальная веб-студия.';
 
-            echo (str_replace($colorText, '<span style=\'color: red\'>' . $colorText . '</span>', $userInfo));
+             $originalText =
+               '<div class=\'about\'>
+                   <p class=\'about-title\'>Работа:</p>
+                   <ul class=\'about-list\'>
+                     <li>Маленькая провинциальная веб-студия.</li>
+                   </ul>
+                   <p class=\'about-title\'>Хобби:</p>
+                   <ul class=\'about-list\'>
+                     <li>Веб-технологии;</li>
+                     <li>Музыка;</li>
+                     <li>Кино;</li>
+                     <li>Фотография;</li>
+                     <li>Рисование;</li>
+                     <li>Спорт.</li>
+                   </ul>
+               </div>';
+             
+             $color = 'red';
+ 
+             echo colorText($colorText, $originalText, $color);
           ?>
 
           <div class='review'>
             <p class='about-title'>Что понравилось на занятиях:</p>
             <ul class='about-list'>
             <?php
-              $reviewInfo = 
+              $originalText = 
               '<li>Четкая и понятная организация учебного процесса;</li>
               <li>Возможность просмотреть лекции в записи;</li>
               <li>Большое количество наглядных материалов, презентаций, примеров.</li>';
 
-              $reviewStr = preg_replace('/\s+/', ' ', strip_tags($reviewInfo));
-              $wordsArray = explode(' ', trim($reviewStr));
+              $colorFirst = 'red';
+              $colorSecond = 'green';
 
-              foreach ($wordsArray as $index => $word) {
-                if ($index % 2 == 0) {
-                    $wordsArray[$index] = '<span style=\'color: green;\'>' . $word . '</span>';
-                } else {
-                    $wordsArray[$index] = '<span style=\'color: red;\'>' . $word . '</span>';
-                }
-              }
-
-              $review = implode(' ', $wordsArray);
-              echo ($review);
+              echo doubleColorText($originalText, $colorFirst, $colorSecond);
             ?>
 
           </ul>

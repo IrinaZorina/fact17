@@ -387,6 +387,10 @@ body.night .answer td {
     border: 1px solid #ffffff;
 }
 
+.date-interval-form {
+    padding: 20px 0px;
+}
+
 @media (min-width: 1281px) and (max-width: 1440px) {
     .user-info .about,
     .user-info .review {
