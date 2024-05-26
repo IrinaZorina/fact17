@@ -15,18 +15,20 @@
      Если же в этой строке 5 и менее символов - необходимо вывести эту строку на экран.</h4></p>
      <?php
      $str='12345678910';
-     if(strlen($str)>5){
-           echo mb_substr($str,0,5) . '...';
+     function cut($str){
+        if(strlen($str)>5){
+             echo mb_substr($str,0,5) . '...';
      }
-     elseif(strlen($str)<=5){
-            echo $str;
-     }
+       elseif(strlen($str)<=5){
+     } 
+     } echo $str;
      ?></p></div>
     <div class="number 2"><p><h4> 2.Дана строка $str. Замените в ней все буквы 'a' <br>
     на цифру 1, буквы 'b' - на 2, а буквы 'c' - на 3.</h4></p>
     <?php
     $str='abcaabbccbca';
-    echo str_replace(['a','b','c'],['1','2','3'],$str);
+    $str2=str_replace(['a','b','c'],['1','2','3'],$str); 
+    echo $str2;
     ?></p></div>
     <div class="number 3"><p><h4> 3.Дана строка 'abc abc abc'. Определите позицию последней буквы 'b'.</h4></p>
     <?php
@@ -43,6 +45,7 @@
     <div class="number 4"><p><h4> 4.В двух строках содержатся даты вида День-Месяц-Год <br>
     (например, 10-02-2015). Определите количество дней между датами.</h4></p>
     <?php
+
     $date=strtotime('10-02-2015');
     $date1=strtotime('16-03-2015');
     $days=($date1-$date)/86400;

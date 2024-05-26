@@ -3,12 +3,17 @@
     <head> 
         <link rel="stylesheet" href="styles/styles.css">
         <?php
-        $time = 9;
-        if ($time >= 8 && $time < 20){
-        echo '<link rel="stylesheet" href="styles/styleday.css">';
-        } else {
-            echo '<link rel="stylesheet" href="styles/stylenight.css">';
+        $time=10;
+        function ti($time){
+            if ($time >= 8 && $time < 20){
+                echo '<link rel="stylesheet" href="styles/styleday.css">';        
+        } else{
+             echo '<link rel="stylesheet" href="styles/stylenight.css">';
         }
+        
+        return $time;
+    }
+        
         ?>
         
     </head>
