@@ -9,9 +9,9 @@
 	<title>Домашнее Задание</title>
 </head>
 <?php
-include "../time.php"
+include "../DZ/numbers.php";
 ?>
-<body class="<?php echo $time?>">
+<body class="<?php echo time_my_site()?>">
 	
 
 <div>

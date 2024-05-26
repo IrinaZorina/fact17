@@ -7,9 +7,9 @@
 	<title>Домашнее Задание</title>
 </head>
 <?php
-include "../time.php"
+include "../DZ/numbers.php";
 ?>
-<body class="<?php echo $time?>">
+<body class="<?php echo time_my_site()?>">
 	
 
 		<div><p>Строки</p></div>
@@ -170,7 +170,7 @@ include "../time.php"
 		</p>
 		</div>
 
-<p>Остальные задачи решены на мое сайте <a href="../index.php">жми сюда.</a></p>
+<h2>Остальные задачи решены на мое сайте <a href="../index.php">жми сюда.</a></h2>
 
 
 </body>

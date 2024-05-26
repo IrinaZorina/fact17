@@ -6,11 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Мой сайт</title>
 	<link rel="stylesheet" href="css/style.css">
-</head>
-	<?php	include "time.php"?>
-<body class="<?php echo $time?>">
-
+</head>	
 	<?php include "header/header.php"?>
+	<?php include "DZ/numbers.php"?>
+	<body class="<?php echo time_my_site()?>">
 
 	<main>
 
@@ -62,7 +61,11 @@
 				<div class="text"><p class="<?php echo $time?>">Парк Победы</p></div>
 			</div>
 		</div>
-	<div class="numbers"><?php include "DZ/numbers.php"?></div>
+	<div class="numbers">
+		<p>Кодичество гласны букв = <?php echo vowels($a1)?>.</p>
+		<p>Количество слов в блоках: О себе и Что хотелось бы в будующем = <?php echo arrey_word($b1)?>.</p>
+		<p>Я родился 23-06-1987 и на сегоднячный день мне исполнилось = <?php echo round (data_life($data_1))?>.</p>
+	</div>
 		
 
 	</main>
