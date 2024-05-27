@@ -1,13 +1,14 @@
+<?php
+include_once("functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <title>О себе</title>
     <link rel="stylesheet" href="assets/css/tatyana.css">
     <?php
-    $currentHour = (int)date('H');
-    if ( $currentHour > 8 && $currentHour < 20 ) {
+    if ( isDay() ) {
         //day
         ?>
         <link rel="stylesheet" href="assets/css/styleday.css">

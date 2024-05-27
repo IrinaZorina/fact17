@@ -8,6 +8,17 @@ function getRandColor() {
     }
     return $color;
 }
+function dateDiff($date1) {
+    $dateObj = new DateTime($date1);
+    $currentDate = new DateTime();
+    $dateDiff = $currentDate->diff($dateObj);
+    print_r("Дата - {$dateObj->format('d.m.Y')} <br>" .
+        "Текущая дата - {$currentDate->format('d.m.Y')} <br>". "Разность = {$dateDiff->days} <br>");
+}
+function isDay() {
+    $currentHour = (int)date('H');
+    return ( $currentHour > 8 && $currentHour < 20 );
+}
 function makeColorText($arrText) {
     $color1 = getRandColor();
     $color2 = getRandColor();

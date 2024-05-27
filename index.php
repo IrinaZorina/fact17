@@ -1,10 +1,11 @@
 <?php
+include_once("functions.php");
 include("header.php");
-include("functions.php");
 ?>
 <a href="http://fact17/phpcycles.php">Циклы</a>
 <a href="http://fact17/phparrays.php">Массивы</a>
 <a href="http://fact17/phpstrings.php">Строки</a>
+<a href="http://fact17/phpfunctions.php">Функции</a>
 <div class="container">
     <div class="one">
         <center><img width="70%" src="Images/image.jpg"></center>
@@ -35,11 +36,7 @@ include("functions.php");
     </div>
 </div>
 <?php
-    $date1 = new DateTime('20-05-1997');
-    $currentDate = new DateTime();
-    $dateDiff = $currentDate->diff($date1);
-    print_r("Дата - {$date1->format('d.m.Y')} <br>" .
-        "Текущая дата - {$currentDate->format('d.m.Y')} <br>". "Разность = {$dateDiff->days} <br>");
+    dateDiff('20-05-1997');
 ?>
 <h1>Достопримечательности Нижнего Новгорода</h1>
 <div class="container-flex">
