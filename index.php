@@ -18,6 +18,11 @@ require_once 'includes/functions.inc.php';
     <main>
       <div class='answer'>
         <?php
+          if (isset($_POST['login']) && isset($_POST['password'])) {
+          echo 'Информация о пользователе: ';
+          echo '<p>Логин: ' . $_POST['login'] . ', Пароль: ' . $_POST['password'] . '</p>';
+          }
+          
           echo 'Количество слов на странице: ' . getWordsOnPageCount('index.php') . '<br>';
           echo '<br>Количество гласных на странице:<br>';
           print_r(getVowelsCount('index.php'));

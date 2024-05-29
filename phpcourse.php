@@ -12,7 +12,7 @@ require_once 'includes/functions.inc.php';
   <title>GET/POST - Задание 4</title>
 </head>
 
-<body class='<?= getCurrentTheme(); ?>'>
+<body class='inner-wrapper'>
   <?php
   require_once 'templates/header.php';
   ?>

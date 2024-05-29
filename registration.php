@@ -9,7 +9,7 @@ require_once 'includes/functions.inc.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css" />
-  <title>Авторизация</title>
+  <title>Регистрация</title>
 </head>
 
 <body class='<?= getCurrentTheme(); ?> inner-wrapper'>
@@ -17,29 +17,16 @@ require_once 'includes/functions.inc.php';
   require_once 'templates/header.php';
   ?>
   <main>
-    <form class="auth-form" action="auth.php" method="post">
+    <form class="registration-form" action="index.php" method="post">
         <label for="login">Логин:</label>
         <input type="text" id="login" name="login" required>
 
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit">Войти</button>
+        <button type="submit">Зарегистрироваться</button>
     </form>
-    <a class='reg-link' href="registration.php">Зарегистрироваться</a>
-
-    <?php
-      $user = [
-        'login' => 'dkrech07',
-        'passwordHash' => '1f285f3db9e5c6d5851987798eb2f167',
-      ];
-
-      if (checkUser($user) == true) {
-        header("Location: index.php");
-        exit();
-      } 
-    ?>
-    
+    <a class="auth-link" href="auth.php">Авторизоваться</a>
   </main>
   <?php
   require_once 'templates/footer.php';

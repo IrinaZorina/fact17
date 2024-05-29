@@ -79,6 +79,16 @@ function doubleColorText($originalText, $colorFirst, $colorSecond)
   return implode(' ', $wordsArray);
 }
 
+function getCheckQuestion ($number, $answer) {
+  if (isset($_POST['name'])) {
+    if ($_POST[$number] == $answer) {
+      return 'checked'; 
+    }
+  } elseif ($answer == 'yes') {
+    return 'checked';
+  }
+}
+
 function getScore($questionsYes, $questionsNo)
 {
   $score = 0;
@@ -105,4 +115,25 @@ function getScore($questionsYes, $questionsNo)
   }
 
   return $score;
+}
+
+function registrationUser() {
+  $login = isset($_POST['login']) ? $_POST['login'] : null;
+  $passwordHash = isset($_POST['password']) ? md5($_POST['password']) : null;
+
+  if (isset($login) && isset($passwordHash)) {
+    return [
+      'login' => $login, 
+      'password' => $passwordHash,
+    ];
+  }
+}
+
+function checkUser($user) {
+  $login = isset($_POST['login']) ? $_POST['login'] : null;
+  $passwordHash = isset($_POST['password']) ? md5($_POST['password']) : null;
+  
+  if ($login === $user['login'] && $passwordHash === $user['passwordHash']) {
+    return $user;
+  }
 }

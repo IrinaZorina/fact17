@@ -52,7 +52,9 @@ body.night .container-grid li,
 body.night .container-grid img,
 body.night .current-time,
 body.night .element,
-body.night .answer
+body.night .answer,
+body.night .auth-form,
+body.night .registration-form
  {
     border-color: #ffffff;
 }
@@ -304,6 +306,14 @@ footer {
     padding-top: 20px;
 }
 
+.inner-wrapper footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
 .footer-contacts  {
     list-style-type: none;
 }
@@ -406,6 +416,38 @@ body.night .answer td {
 
 .character-form {
     margin-bottom: 20px;
+}
+
+.character-form input[type=submit] {
+    margin-top: 10px;
+    display: block;
+}
+
+.auth-form,
+.registration-form {
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form input,
+.registration-form input,
+.registration-form button,
+.auth-form button{
+    width: 100%;
+    margin: 10px 0px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.auth-link,
+.reg-link {
+    display: block;
+    text-align: center;
+    padding: 20px;
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {

@@ -26,7 +26,7 @@ require_once 'includes/functions.inc.php';
         При нажатии на кнопку должно быть сформирована ссылка следующего вида: phpcourse.php?l=3 , где 3 – это номер выбранной лабораторной работы.
       </h3>
 
-      <h1>Выберите лабораторную работу</h1>
+      <h4>Выберите лабораторную работу</h4>
       <form method="get" action="phpcourse.php">
         <label for="lab">Лабораторная работа:</label>
         <select name="l" id="lab">
@@ -75,17 +75,17 @@ require_once 'includes/functions.inc.php';
       ];
       ?>
 
-      <h1>Анкета</h1>
+      <h4>Анкета</h4>
       <form class="character-form" action="requests.php" method="post">
         <label>Ваше имя:</label>
         <input id='name' type="text" name="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>" required></label>
-        <?php
+        <?php                  
         foreach ($questionsList as $key => $item) {
           $questionNumber = $key + 1;
           echo '<p>' . ($questionNumber) . '. ' . $item . '</p>';
-          echo "<input type='radio' id='$questionNumber" . "_yes" . "' name='$questionNumber' value='yes' checked>
+          echo "<input type='radio' id='$questionNumber" . "_yes" . "' name='$questionNumber' value='yes' " . getCheckQuestion ($questionNumber, 'yes') . ">
           <label for='$questionNumber" . "_yes" . "'>Да</label>";
-          echo "<input type='radio' id='$questionNumber" . "_no" . "' name='$questionNumber' value='no'>
+          echo "<input type='radio' id='$questionNumber" . "_no" . "' name='$questionNumber' value='no' " . getCheckQuestion ($questionNumber, 'no') .">
           <label for='$questionNumber" . "_no" . "'>Нет</label>";
         }
         ?>
