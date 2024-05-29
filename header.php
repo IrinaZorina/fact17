@@ -6,7 +6,11 @@
 </head>
 <body>
 <div class="container">
-    <div class="header"><h1>Новинки кино 2024</h1></div>
+    <div class="header"><h1>Новинки кино 2024
+            <a href="/php/login.php">Авторизация</a>
+            <a href="/php/register.php">Регистрация</a></h1>
+
+    </div>
     <div class="menu"><h2>Меню:</h2>
         <ul>
             <li><a href="../php/index_vert.php">Вертикаль</a></li>
@@ -19,6 +23,7 @@
             <li><a href="../php/massiv_3.php">Массив 3</a></li>
             <li><a href="../php/my.php">Строки</a></li>
             <li><a href="../php/data.php">Дата</a></li>
+
         </ul>
     </div>
 </body>
