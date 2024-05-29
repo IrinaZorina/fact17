@@ -643,6 +643,20 @@ textarea {
   filter: brightness(0) invert(1);
 }
 
+.nav__auth {
+  position: relative;
+  margin-left: 10px;
+}
+
+.nav__auth::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: white;
+  left: -15px;
+}
+
 .page-section {
   position: relative;
   padding: 30px 0;
@@ -1138,6 +1152,10 @@ textarea {
     width: 22px;
     height: 22px;
   }
+
+  .nav__auth::before {
+    background-color: transparent;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1150,4 +1168,8 @@ textarea {
   .project-card {
     padding: 15px;
   }
+}
+
+.mt-16 {
+  margin-top: 16px;
 }
