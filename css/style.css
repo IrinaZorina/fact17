@@ -201,7 +201,8 @@ body.night .current-time {
     width: 40px;
 }
 
-.header-link {
+.header-link,
+.answer-link {
     position: relative;
     color: #000000;
     padding: 5px 10px;
@@ -209,7 +210,8 @@ body.night .current-time {
     text-decoration: none;
 }
 
-.header-link::before {
+.header-link::before,
+.answer-link::before {
     position: absolute;
     display: block;
     content: "";
@@ -223,29 +225,35 @@ body.night .current-time {
     top: 9px;
 }
 
-.header-link:hover::before {
+.header-link:hover::before,
+.answer-link:hover::before {
     border-top: 2px solid #000000;
     border-left: 2px solid #000000;
 }
 
-.header-link:hover {
+.header-link:hover,
+.answer-link:hover {
     border-bottom: 1px solid #000000;
 }
 
-body.night .header-link {
+body.night .header-link,
+body.night .answer-link {
     color: #ffffff;
 }
 
-body.night .header-link::before {
+body.night .header-link::before,
+body.night .answer-link::before {
     background-color: #1b1e23;
 }
 
-body.night .header-link:hover::before {
+body.night .header-link:hover::before,
+body.night .answer-link:hover::before {
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
 }
 
-.header-link:hover {
+.header-link:hover,
+.answer-link:hover {
     border-bottom: 1px solid #ffffff;
 }
 
@@ -383,12 +391,21 @@ footer .footer-social {
     width: 30px;
 }
 
+.answer-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
 body.night .answer td {
     border: 1px solid #ffffff;
 }
 
 .date-interval-form {
     padding: 20px 0px;
+}
+
+.character-form {
+    margin-bottom: 20px;
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
