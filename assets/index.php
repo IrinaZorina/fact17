@@ -115,45 +115,41 @@ echo "<p class 'hero__description'>$coloredText</p>";
 <th><p><b class="zadanie">Количество слов</b></p></th>
 </tr>
 <tr>
-  <td><?php
-$date1 = '17.07.2003'; //День рождения
-$date2 = date("d.m.Y");; // Актуальная дата
-echo "Дата рождения: $date1";
-echo "<br>";
-echo "Актуальная дата: $date2";
-echo "<br>";
+  <td>
+    <?php
+     require_once 'inserts/insfunction.php';
 
-$time1 = strtotime($date1); //преобразует в секунды
-$time2 = strtotime($date2);
+     $date1 = '17.07.2003'; //День рождения
+     $date2 = date("d.m.Y"); // Актуальная дата
 
+     echo "Дата рождения: $date1";
+     echo "<br>";
+     echo "Актуальная дата: $date2";
+     echo "<br>";
 
-$time3 = $time2 - $time1;
+     $days = calculateDays($date1, $date2);
 
-$days = round($time3 / (60 * 60 * 24));
+     echo "Дней между датами: $days";
+    ?>
+</td>
+<td>
+  <?php
+   require_once 'inserts/insfunction.php';
 
-echo "Дней между датами: $days";
+   $file = 'index.php'; // Файл с текстом
+   $counts = countVC($file);
 
+   echo 'Гласных: ' . $counts['vowels'] . '<br />';
+   echo 'Согласных: ' . $counts['consonants'];
 ?>
 </td>
-<td><?php
+<td>
+  <?php
+   require_once 'inserts/insfunction.php';
 
-$file = 'index.php'; // Файл с текстом
-$str = file_exists($file) ? file_get_contents($file) : '';
-$patt = '~(?<vowels>[аеёиоуыэюя])|(?<conson>[бвгджзйклмнпрстфхцчшщъь])~iu';
-preg_match_all($patt, $str , $a);
-
-$vowels = count(array_filter($a['vowels']));
-$conson = count(array_filter($a['conson']));
-
-echo 'Гласных: '. $vowels .'<br />Согласных: '. $conson;
-?></td>
-<td><?php
-$file = 'index.php'; // Файл с текстом
-$str = file_exists($file) ? file_get_contents($file) : '';
-$words = explode(" ", $str);
-$words = array_filter($words);
-$wordCount = count($words);
-echo "Слов: " . $wordCount;
+   $file = 'index.php'; // Файл с текстом
+   $wordCount = countWords($file);
+   echo "Слов: " . $wordCount;
 ?>
 </td>
 </tr>
@@ -161,10 +157,10 @@ echo "Слов: " . $wordCount;
 </div>
   </main>
   <?php
-  include 'inserts/footer.php';
+   include 'inserts/footer.php';
   ?>
   <?php
-  include 'inserts/script.php';
+   include 'inserts/script.php';
   ?>
 </body>
 </html>

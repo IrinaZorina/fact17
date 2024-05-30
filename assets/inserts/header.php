@@ -4,5 +4,6 @@
   <a href="cycles.php" class="cycles">Циклы</a>
   <a href="arrays.php" class="arrays">Массивы</a>
   <a href="string.php" class="string">Строки</a>
+  <a href="function.php" class="function">Функции</a>
   <button class="call-button">Позвони мне</button>
 </header>

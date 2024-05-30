@@ -36,7 +36,8 @@ img {
 .vodorod,
 .cycles,
 .arrays,
-.string {
+.string,
+.function {
   text-decoration: none;
   color: white;
   text-align: center;
@@ -46,7 +47,8 @@ img {
 .vodorod:hover,
 .cycles:hover,
 .arrays:hover,
-.string:hover {
+.string:hover,
+.function:hover {
   color: #009efd;
   text-align: center;
   text-shadow: 1px 1px 2px #009efd;
@@ -384,7 +386,7 @@ th {
   }
 
   .header {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: auto;
   }
 
@@ -428,5 +430,9 @@ th {
   .odeshda3,
   .odeshda4 {
     flex-basis: 75%;
+  }
+  .header {
+    font-size: 8px;
+    margin-bottom: auto;
   }
 }
