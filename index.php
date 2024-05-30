@@ -5,7 +5,9 @@ include("header.php");
 <a href="http://fact17/phpcycles.php">Циклы</a>
 <a href="http://fact17/phparrays.php">Массивы</a>
 <a href="http://fact17/phpstrings.php">Строки</a>
-<a href="http://fact17/phpfunctions.php">Функции</a>
+<a href="http://fact17/phpfunctions.php">Функции</a><br>
+<a href="http://fact17/phpgetpost.php">Передача данных клиента</a><br>
+<a href="http://fact17/authoriz.php">Авторизация на сайте</a><br>
 <div class="container">
     <div class="one">
         <center><img width="70%" src="Images/image.jpg"></center>
