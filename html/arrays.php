@@ -1,3 +1,7 @@
+<?php
+include 'header.php';
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,6 +28,9 @@ $sum = array_sum($subject[$key]);
 echo "<br>";
 echo $sum;
 }
+?>
+<?php
+include 'footer.php'; 
 ?>
 </body>
 </html>

@@ -1,13 +1,25 @@
-<<?php include 'html/header.php' ?>
+<?php include 'html/header.php' ?>
 	<div>
 		<div class="info">
 			<div class="img"><img class="foto" src="assets/media/foto.png"></div>
-			<div class="about">Озеров Андрей, 37 лет, живу и работаю в Петербурге.<br>
-			Работаю на должности ведущего специалиста<br>отдела интегрированной системы менеджмента.</div>
-			<div class="course">На курс привел интерес.<br>Нравится комфортный темп работы<br>
-			и отзывчивость преподавателя.<br> Пожеланий по улучшению курса пока нет.</div>
+			<div class="about"><span style = 'color: white'>Озеров Андрей, 37 лет, живу и работаю в Петербурге.<br>
+			Работаю на должности ведущего специалиста<br>отдела интегрированной системы менеджмента.</span></div>
+			<div class="course"><?php $text = 'На курс привел интерес.<br>Нравится комфортный темп работы<br>
+			и отзывчивость преподавателя.<br> Пожеланий по улучшению курса пока нет.';
+			$text_expectation = explode(" ", $text);
+			for ($i = 0; $i < count($text_expectation); $i++) {
+				if ($i % 2== 0) {
+					$text_expectation[$i] = "<span style = 'color: green'>$text_expectation[$i]</span>";
+				} else {
+					$text_expectation[$i] = "<span style = 'color: orange'>$text_expectation[$i]</span>"; 
+				}
+				}
+				$str_color = implode (' ',$text_expectation);
+				echo $str_color;
+				?>
+			</div>
 	</div>
-<h1>Породы кошек</h1>
+<h1>Породы кошек</h1> 
 	<div>
 		<div class="cats">
 			<div class="cat1"><img class="img1" src="assets/media/cat1.png" alt="#"><figcaption>Абиссинская</figcaption></div>
@@ -25,7 +37,86 @@
 			<div class="dog4"><img class="img8" src="assets/media/dog4.png" alt="#"><figcaption>Немецкая овчарка</figcaption></div>
 		</div>
 	</div>
-<?php include 'html/footer.php'?>
+<?php include 'html/footer.php' ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

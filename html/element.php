@@ -1,3 +1,7 @@
+<?php
+include 'header.php';
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,5 +26,8 @@
 		<div class="child3"></div>
 		<div class="child4"><strong>Цинк</strong></div>
 	</div>
+<?php
+include 'footer.php'; 
+?>
 </body>
 </html>
