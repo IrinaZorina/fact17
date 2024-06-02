@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 29 2024 г., 16:33
+-- Время создания: Июн 02 2024 г., 08:20
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -31,17 +31,18 @@ CREATE TABLE `users` (
   `id` int UNSIGNED NOT NULL,
   `username` varchar(25) COLLATE utf8mb3_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL
+  `email` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `pages` text COLLATE utf8mb3_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
-(1, 'admin', '$2y$10$b12HRUdfCZ1oaZDPPBi4JukOt2fBJR.FSAhXpyPggarBZVYbs8SNO', 'admin@mail.ru'),
-(2, 'sss', '$2y$10$ra9Tox7I98anhaPgRtoLpO65BtyiW9e4.WYfsyQMded.Jbxaj43BS', 'ssds@mail.ru'),
-(3, 'lol', '$2y$10$ajqq7DMuJgqN3ZrG/2ngnO6beRQDdsBRmv2p0Q/S0Swrx9Hs0OAkC', 'lol@mail.ru');
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `pages`) VALUES
+(1, 'admin', '$2y$10$b12HRUdfCZ1oaZDPPBi4JukOt2fBJR.FSAhXpyPggarBZVYbs8SNO', 'admin@mail.ru', '/php/bitrix.php'),
+(2, 'sss', '$2y$10$ra9Tox7I98anhaPgRtoLpO65BtyiW9e4.WYfsyQMded.Jbxaj43BS', 'ssds@mail.ru', ''),
+(3, 'lol', '$2y$10$ajqq7DMuJgqN3ZrG/2ngnO6beRQDdsBRmv2p0Q/S0Swrx9Hs0OAkC', 'lol@mail.ru', '/php/bitrix.php');
 
 --
 -- Индексы сохранённых таблиц
