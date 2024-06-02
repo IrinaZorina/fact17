@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.inc.php';
 ?>
 
@@ -17,7 +18,7 @@ require_once 'includes/functions.inc.php';
   require_once 'templates/header.php';
   ?>
   <main>
-    <form class="registration-form" action="index.php" method="post">
+    <form class="registration-form" action="registration.php" method="post">
         <label for="login">Логин:</label>
         <input type="text" id="login" name="login" required>
 
@@ -27,6 +28,18 @@ require_once 'includes/functions.inc.php';
         <button type="submit">Зарегистрироваться</button>
     </form>
     <a class="auth-link" href="auth.php">Авторизоваться</a>
+
+    <?php
+      $newUserData = registrationUser();
+
+      if ($newUserData == true) {
+        $_SESSION['login'] = $newUserData['login'];
+        $_SESSION['password'] = $newUserData['password'];
+        $_SESSION['passwordHash'] = $newUserData['passwordHash'];
+        header("Location: index.php");
+        exit();
+      } 
+    ?>
   </main>
   <?php
   require_once 'templates/footer.php';

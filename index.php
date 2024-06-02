@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.inc.php';
 ?>
 
@@ -18,9 +19,24 @@ require_once 'includes/functions.inc.php';
     <main>
       <div class='answer'>
         <?php
-          if (isset($_POST['login']) && isset($_POST['password'])) {
-          echo 'Информация о пользователе: ';
-          echo '<p>Логин: ' . $_POST['login'] . ', Пароль: ' . $_POST['password'] . '</p>';
+          if (isset($_SESSION['login']) && isset($_SESSION['password']) && isset($_SESSION['passwordHash'])) {
+            $username = htmlspecialchars($_SESSION['login']);
+            $password = htmlspecialchars($_SESSION['password']);
+            $passwordHash = htmlspecialchars($_SESSION['passwordHash']);
+
+            echo "<p>Логин: $username</p>";
+            echo "<p>Пароль: $password</p>";
+            echo "<p>Хеш пароля: $passwordHash</p>";
+
+            if (isset($_SESSION['last_page'])) {
+              $lastPage = htmlspecialchars($_SESSION['last_page']);
+              echo "<p>Последняя посещенная страница: $lastPage</p>";
+            } else {
+                echo "<p>Страницы fact.php и bitrix.php пока что не посещали.</p>";
+            }
+
+          } else {
+            echo "<p>Неизвестный пользователь</p>";
           }
           
           echo 'Количество слов на странице: ' . getWordsOnPageCount('index.php') . '<br>';

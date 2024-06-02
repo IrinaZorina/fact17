@@ -208,8 +208,9 @@ body.night .current-time {
     position: relative;
     color: #000000;
     padding: 5px 10px;
-    margin-right: 20px;
+    margin-right: 10px;
     text-decoration: none;
+    font-size: 12px;
 }
 
 .header-link::before,

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.inc.php';
 ?>
 
@@ -31,10 +32,16 @@ require_once 'includes/functions.inc.php';
     <?php
       $user = [
         'login' => 'dkrech07',
-        'passwordHash' => '1f285f3db9e5c6d5851987798eb2f167',
+        'passwordHash' => '1f285f3db9e5c6d5851987798eb2f167', // Пароль: Fduecn2018
       ];
 
+      $userData = checkUser($user);
+
       if (checkUser($user) == true) {
+        $_SESSION['login'] = $userData['login'];
+        $_SESSION['password'] = $userData['password'];
+        $_SESSION['passwordHash'] = $userData['passwordHash'];
+
         header("Location: index.php");
         exit();
       } 

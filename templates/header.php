@@ -19,7 +19,10 @@ $index_url = '/';
   <a class="header-link" href="requests.php">GET/POST</a>
   <a class="header-link" href="registration.php">Регистрация</a>
   <a class="header-link" href="auth.php">Авторизация</a>
-  
+  <a class="header-link" href="cookie.php">COOKIE, SESSION</a>
+  <a class="header-link" href="fact.php">ФАКТ</a>
+  <a class="header-link" href="bitrix.php">Битрикс</a>
+
   <div class="element">
     <span class="element-letter">N</span>
     <span class="element-number">7</span>

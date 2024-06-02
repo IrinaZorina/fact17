@@ -124,7 +124,8 @@ function registrationUser() {
   if (isset($login) && isset($passwordHash)) {
     return [
       'login' => $login, 
-      'password' => $passwordHash,
+      'password' => $_POST['password'],
+      'passwordHash' => $passwordHash,
     ];
   }
 }
@@ -134,6 +135,21 @@ function checkUser($user) {
   $passwordHash = isset($_POST['password']) ? md5($_POST['password']) : null;
   
   if ($login === $user['login'] && $passwordHash === $user['passwordHash']) {
+    $user['password'] = $_POST['password'];
     return $user;
   }
 }
+
+function getPageBackgroundColor() {
+  if (isset($_POST['pageBackgroundColor'])) {
+      $pageBackgroundColor = $_POST['pageBackgroundColor'];
+      setcookie('pageBackgroundColor', $pageBackgroundColor, time() + 3600 * 24 * 30, "/");
+  } elseif (isset($_COOKIE['pageBackgroundColor'])) {
+      $pageBackgroundColor = $_COOKIE['pageBackgroundColor'];
+  } else {
+      $pageBackgroundColor = '#000000';
+  }
+
+  return $pageBackgroundColor;
+}
+
