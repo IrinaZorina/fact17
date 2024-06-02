@@ -1,7 +1,7 @@
 
 <header>
 		<div class="heade">
-			
+			<p>А вы были на этих страницах? <a href="sity/fact.php" target="_blank" rel="noopener noreferrer">Fact.php</a> <a href="sity/bitrix.php" target="_blank" rel="noopener noreferrer">Bitrix.php</a></p>
  <p>Для получения доступа к моим работам авторизуйтесь!!!</p>
 	<form method="post">
 		<label for='first'>Введите ваше Имя: </label>
