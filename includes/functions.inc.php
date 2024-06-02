@@ -147,9 +147,9 @@ function getPageBackgroundColor() {
   } elseif (isset($_COOKIE['pageBackgroundColor'])) {
       $pageBackgroundColor = $_COOKIE['pageBackgroundColor'];
   } else {
-      $pageBackgroundColor = '#000000';
+      $pageBackgroundColor = 'none';
+      setcookie('pageBackgroundColor', $pageBackgroundColor, time() + 3600 * 24 * 30, "/");
   }
-
   return $pageBackgroundColor;
 }
 
