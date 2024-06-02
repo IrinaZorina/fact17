@@ -13,7 +13,8 @@ if (isset($_POST['login'])) {
     } else {
         if (password_verify($password, $result['password'])) {
             $_SESSION['user_id'] = $result['id'];
-            echo '<p class="success">Поздравляем, вы прошли авторизацию!</p>';
+            $_SESSION['auth'] = true;
+
         } else {
             echo '<p class="error"> Неверные пароль или имя пользователя!</p>';
         }
