@@ -67,3 +67,38 @@ foreach ($arr4 as $num) {
 print_r($arr4);
 echo "Минимальное положительное число = $min<br>";
 echo "Максимальное отрицательное число = $max<br>";
+?>
+<h1>Слайд 17</h1>
+<p><b>Задание 8</b></p>
+<?php
+$arr5 = [
+    ['Алмаз','Сапфир', 'Рубин'],
+    ['Изумруд', 'Аквамарин'],
+    ['Лазурит', 'Альмандин']
+];
+foreach ($arr5 as $arrAr) {
+    foreach ($arrAr as $str) {
+        $firstLetter = substr($str, 0, 2);
+        if ($firstLetter == 'А') {
+            echo $str . '<br>';
+        }
+    }
+}
+?>
+     <p><b>Задание 9</b></p>
+<?php
+$arr6 = [
+    [1,6,8],
+    [12, 15, 16],
+    [18, 21, 24]
+];
+$total = 0;
+$arCount = [];
+$i = 0;
+foreach ($arr6 as $arrAr) {
+    $i++;
+    $total += $arCount[$i] = count($arrAr);
+}
+echo "Total elem = $total<br><pre>";
+print_r($arCount);
+echo "</pre>";

@@ -8,6 +8,10 @@ include("header.php");
 <a href="http://fact17/phpfunctions.php">Функции</a><br>
 <a href="http://fact17/phpgetpost.php">Передача данных клиента</a><br>
 <a href="http://fact17/authoriz.php">Авторизация на сайте</a><br>
+<a href="http://fact17/hello.php">Cookie</a><br>
+<a href="http://fact17/session.php">Session</a><br>
+           <a href="http://fact17/bitrix.php">bitrix.php</a><br>
+           <a href="http://fact17/fact.php">fact.php</a><br>
 <div class="container">
     <div class="one">
         <center><img width="70%" src="Images/image.jpg"></center>
