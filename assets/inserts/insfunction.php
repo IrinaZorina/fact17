@@ -1,6 +1,6 @@
 <?php
 function styleTime(){
-    date_default_timezone_set('Asia/Yekaterinburg'); //Часовой пояс
+    date_default_timezone_set('Asia/Yekaterinburg'); //Часовой пояс 
     $hour = date("H");
     
     if ($hour >= 8 && $hour < 20) {

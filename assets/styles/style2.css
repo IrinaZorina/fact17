@@ -37,7 +37,9 @@ img {
 .cycles,
 .arrays,
 .string,
-.function {
+.function,
+.getpos,
+.sign {
   text-decoration: none;
   color: white;
   text-align: center;
@@ -48,7 +50,8 @@ img {
 .cycles:hover,
 .arrays:hover,
 .string:hover,
-.function:hover {
+.function:hover,
+.getpos:hover {
   color: #009efd;
   text-align: center;
   text-shadow: 1px 1px 2px #009efd;
@@ -56,20 +59,14 @@ img {
   text-underline-position: under;
   text-decoration-thickness: 2px;
 }
-
-.call-button {
-  background-color: #009efd;
-  border: solid white 2px;
-  color: black;
-  padding: 15px 32px;
+.sign:hover{
+  color: #680BAB;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 15px;
-  cursor: pointer;
+  text-shadow: 1px 1px 2px #680BAB;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
 }
-
 .hero1 {
   min-height: 60vh;
   display: flex;
@@ -403,11 +400,6 @@ th {
   .tg {
     height: 40px;
     width: 40px;
-  }
-
-  .call-button {
-    font-size: 10px;
-    padding: 10px 21px;
   }
 }
 
