@@ -451,6 +451,47 @@ body.night .answer td {
     padding: 20px;
 }
 
+.not-found-wrapper,
+.not-found {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+.not-found {
+  background: url("../img/404.png") center no-repeat #262626;
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 10%;
+  left: 0px;
+}
+
+.content a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.content a,
+.content a:hover {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.content a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.not-found-link {
+    margin-bottom: 20px;
+}
+
 @media (min-width: 1281px) and (max-width: 1440px) {
     .user-info .about,
     .user-info .review {
@@ -574,4 +615,26 @@ body.night .answer td {
         flex-direction: column;
         align-items: center;
     }
+}
+
+@media only screen and (max-width: 460px),
+screen and (max-height: 700px) {
+  .content {
+    position: static;
+  }
+
+  .content a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 0px;
+    opacity: 0;
+  }
+
+  body {
+    background-size: cover;
+  }
 }

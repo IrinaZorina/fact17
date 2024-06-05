@@ -22,6 +22,7 @@ $index_url = '/';
   <a class="header-link" href="cookie.php">COOKIE, SESSION</a>
   <a class="header-link" href="fact.php">ФАКТ</a>
   <a class="header-link" href="bitrix.php">Битрикс</a>
+  <a class="header-link" href="files.php">Файлы</a>
 
   <div class="element">
     <span class="element-letter">N</span>
