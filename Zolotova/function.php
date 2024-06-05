@@ -33,9 +33,7 @@
     $str = 'HTML, CSS, PHP, BITRIX';
    echo strrev_enc($str); 
    ?> </div>
-   <div class="number 4"> <p><h4> 4.
-    <?php
-    
+   
   
   
 
