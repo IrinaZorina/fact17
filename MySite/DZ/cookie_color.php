@@ -18,7 +18,7 @@ setcookie('color',$color, time()+36000);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>Выбор цвета</title>
 </head>
 <body style="background-color:<?=$_COOKIE['color']?>">
@@ -36,7 +36,7 @@ setcookie('color',$color, time()+36000);
 </form>
 
 
-
+<?php include "../footer/footer.php"?>
 
 </body>
 </html>

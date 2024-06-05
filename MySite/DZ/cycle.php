@@ -88,14 +88,11 @@ include "../DZ/numbers.php";
 		}
 ?></p>
 </div>
-
-
-
-
-
-
 </div>
-	
+
+<?php include "../footer/footer.php"?>
+
+
 </body>
 </html>
 

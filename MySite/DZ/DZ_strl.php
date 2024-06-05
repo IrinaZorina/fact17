@@ -172,6 +172,7 @@ include "../DZ/numbers.php";
 
 <h2>Остальные задачи решены на мое сайте <a href="../index.php">жми сюда.</a></h2>
 
+<?php include "../footer/footer.php"?>
 
 </body>
 </html>

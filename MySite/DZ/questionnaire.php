@@ -83,7 +83,8 @@ if ($sum>15) {
 ?>
 	</form>
 
-		
+	<?php include "../footer/footer.php"?>
+	
 
 
 	

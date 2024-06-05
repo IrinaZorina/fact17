@@ -27,5 +27,7 @@ include "../DZ/numbers.php";
 		<input type="text" name = "name">
 		<input type="submit"><br>
 	<?=$nameForm?> посещяли наш сайт <?= $count?>
+	<?php include "../footer/footer.php"?>
+
 </body>
 </html>

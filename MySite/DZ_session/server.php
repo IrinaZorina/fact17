@@ -1,6 +1,8 @@
 <?php
-
+session_start();
+isset($_POST['activity'])?$_POST['activity']: " ";
 setcookie('activity',$_POST['activity'], time()+3600);
+
 ?>
 
 
@@ -21,7 +23,7 @@ setcookie('activity',$_POST['activity'], time()+3600);
 </head>
 <body>
 <div class="form">
-    <h2>Иван Иванов, поздравляем, вы успешно зарегистрировались на нашем сайте!</h2>
+    <h2><?= $_SESSION['name'] . " " . $_SESSION['surname']?>, поздравляем, вы успешно зарегистрировались на нашем сайте!</h2>
     <a href="srv.php">Согласие на обработку персональных данных</a><br></br>
     <a href="res.php">Для вас есть выгодные предложения!</a>
 

@@ -29,5 +29,8 @@ include "../DZ/numbers.php";
 	Вы зашли на сайт: <?= $date?><br>
 	Вы заходили на сайт <?=$time?> секунд назад или <?=floor($time/60)?> минут
 	 
+
+	<?php include "../footer/footer.php"?>
+
 </body>
 </html>

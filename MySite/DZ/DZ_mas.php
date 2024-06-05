@@ -160,6 +160,7 @@ print_r($array);
 		 
 </div>
 
+<?php include "../footer/footer.php"?>
 
 
 	
