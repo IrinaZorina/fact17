@@ -12,6 +12,7 @@ include("header.php");
 <a href="http://fact17/session.php">Session</a><br>
            <a href="http://fact17/bitrix.php">bitrix.php</a><br>
            <a href="http://fact17/fact.php">fact.php</a><br>
+<a href="http://fact17/phpfiles.php">Files</a><br>
 <div class="container">
     <div class="one">
         <center><img width="70%" src="Images/image.jpg"></center>
