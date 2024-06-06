@@ -39,7 +39,8 @@ img {
 .string,
 .function,
 .getpos,
-.sign {
+.sign,
+.cook {
   text-decoration: none;
   color: white;
   text-align: center;
@@ -51,7 +52,8 @@ img {
 .arrays:hover,
 .string:hover,
 .function:hover,
-.getpos:hover {
+.getpos:hover,
+.cook:hover {
   color: #009efd;
   text-align: center;
   text-shadow: 1px 1px 2px #009efd;

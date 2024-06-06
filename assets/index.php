@@ -5,7 +5,8 @@
   <title>Сайт-визитка</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <link rel="icon" href="media/vizitka.png">
   <?php
@@ -26,33 +27,33 @@
         <div class="hero__about">
           <h1 class="hero__title">Пазуха Вячеслав</h1>
           <div class="container2">
-          
-<?php
-$text = "Я учусь в МГТУ в институте автоматизированных систем на направлении Разработка игр и приложений.<br>
+
+            <?php
+            $text = "Я учусь в МГТУ в институте автоматизированных систем на направлении Разработка игр и приложений.<br>
 Своё изучение html, css, js и php я начал ещё в университете на первом курсе.<br>
 После изучения курса планирую стать веб-разработчиком и устроиться в компанию Факт.";
-$color = "#009efd";
-echo "<p class 'hero__subtitle' style='color:" . htmlspecialchars($color) . ";'>$text</p>";
-?>
+            $color = "#009efd";
+            echo "<p class 'hero__subtitle' style='color:" . htmlspecialchars($color) . ";'>$text</p>";
+            ?>
 
-<?php
-$text = "Курс нравится мне тем, что в нём обучающимся во время лекции даётся  множество заданий
+            <?php
+            $text = "Курс нравится мне тем, что в нём обучающимся во время лекции даётся  множество заданий
 для самостоятельного выполнения, а позже эти задания разбираются с преподавателем.<br>";
-$color1 = "#009efd";
-$color2 = "#680BAB";
-$text2 = " ";
-$words = explode(" ", $text);
-$coloredText = "";
+            $color1 = "#009efd";
+            $color2 = "#680BAB";
+            $text2 = " ";
+            $words = explode(" ", $text);
+            $coloredText = "";
 
-for ($i = 0; $i < count($words); $i++) {
-  if ($i % 2 == 0) { 
-    $coloredText .= "<span class 'hero__description' style='color: $color1; display: inline;'> $words[$i] </span>";
-  } else {
-    $coloredText .= "<span class 'hero__description' style='color: $color2; display: inline;'> $words[$i] </span>";
-  }
-}
-echo "<p class 'hero__description'>$coloredText</p>";
-?>
+            for ($i = 0; $i < count($words); $i++) {
+              if ($i % 2 == 0) {
+                $coloredText .= "<span class 'hero__description' style='color: $color1; display: inline;'> $words[$i] </span>";
+              } else {
+                $coloredText .= "<span class 'hero__description' style='color: $color2; display: inline;'> $words[$i] </span>";
+              }
+            }
+            echo "<p class 'hero__description'>$coloredText</p>";
+            ?>
 
           </div>
           <div class="hero__links">
@@ -108,59 +109,62 @@ echo "<p class 'hero__description'>$coloredText</p>";
     </div>
     <br>
     <div class="container6">
-    <table>
-<tr>
-  <th><p><b class="zadanie">Количество дней</b></p></th>
-<th><b class="zadanie">Количество букв</b></p></th>
-<th><p><b class="zadanie">Количество слов</b></p></th>
-</tr>
-<tr>
-  <td>
-    <?php
-     require_once 'inserts/insfunction.php';
+      <table>
+        <tr>
+          <th>
+            <p><b class="zadanie">Количество дней</b></p>
+          </th>
+          <th><b class="zadanie">Количество букв</b></p>
+          </th>
+          <th>
+            <p><b class="zadanie">Количество слов</b></p>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <?php
+            require_once 'inserts/insfunction.php';
 
-     $date1 = '17.07.2003'; //День рождения
-     $date2 = date("d.m.Y"); // Актуальная дата
+            $date1 = '17.07.2003'; //День рождения
+            $date2 = date("d.m.Y"); // Актуальная дата
+            
+            echo "Дата рождения: $date1";
+            echo "<br>";
+            echo "Актуальная дата: $date2";
+            echo "<br>";
 
-     echo "Дата рождения: $date1";
-     echo "<br>";
-     echo "Актуальная дата: $date2";
-     echo "<br>";
+            $days = calculateDays($date1, $date2);
 
-     $days = calculateDays($date1, $date2);
+            echo "Дней между датами: $days";
+            ?>
+          </td>
+          <td>
+            <?php
+            require_once 'inserts/insfunction.php';
 
-     echo "Дней между датами: $days";
-    ?>
-</td>
-<td>
-  <?php
-   require_once 'inserts/insfunction.php';
+            $file = 'index.php'; // Файл с текстом
+            $counts = countVC($file);
 
-   $file = 'index.php'; // Файл с текстом
-   $counts = countVC($file);
+            echo 'Гласных: ' . $counts['vowels'] . '<br />';
+            echo 'Согласных: ' . $counts['consonants'];
+            ?>
+          </td>
+          <td>
+            <?php
+            require_once 'inserts/insfunction.php';
 
-   echo 'Гласных: ' . $counts['vowels'] . '<br />';
-   echo 'Согласных: ' . $counts['consonants'];
-?>
-</td>
-<td>
-  <?php
-   require_once 'inserts/insfunction.php';
-
-   $file = 'index.php'; // Файл с текстом
-   $wordCount = countWords($file);
-   echo "Слов: " . $wordCount;
-?>
-</td>
-</tr>
-</table>
-</div>
+            $file = 'index.php'; // Файл с текстом
+            $wordCount = countWords($file);
+            echo "Слов: " . $wordCount;
+            ?>
+          </td>
+        </tr>
+      </table>
+    </div>
   </main>
   <?php
-   include 'inserts/footer.php';
-  ?>
-  <?php
-   include 'inserts/script.php';
+  include 'inserts/footer.php';
   ?>
 </body>
+
 </html>

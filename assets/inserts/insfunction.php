@@ -1,18 +1,20 @@
 <?php
-function styleTime(){
-    date_default_timezone_set('Asia/Yekaterinburg'); //Часовой пояс 
-    $hour = date("H");
-    
-    if ($hour >= 8 && $hour < 20) {
-      return 'styles/style.css';
-    } else {
-      return 'styles/style2.css';
-    }
+function styleTime()
+{
+  date_default_timezone_set('Asia/Yekaterinburg'); //Часовой пояс 
+  $hour = date("H");
+
+  if ($hour >= 8 && $hour < 20) {
+    return 'styles/style.css';
+  } else {
+    return 'styles/style2.css';
   }
+}
 ?>
 
 <?php
-  function calculateDays(string $date1, string $date2): int {
+function calculateDays(string $date1, string $date2): int
+{
   $time1 = strtotime($date1);
   $time2 = strtotime($date2);
   $time3 = $time2 - $time1;
@@ -22,7 +24,8 @@ function styleTime(){
 ?>
 
 <?php
-function countVC($filePath){
+function countVC($filePath)
+{
   $str = file_exists($filePath) ? file_get_contents($filePath) : '';
   $patt = '~(?<vowels>[аеёиоуыэюя])|(?<conson>[бвгджзйклмнпрстфхцчшщъь])~iu';
   preg_match_all($patt, $str, $a);
@@ -38,7 +41,8 @@ function countVC($filePath){
 ?>
 
 <?php
-function countWords($filePath){
+function countWords($filePath)
+{
   $str = file_exists($filePath) ? file_get_contents($filePath) : '';
   $words = explode(" ", $str);
   $words = array_filter($words);
