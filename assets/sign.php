@@ -111,16 +111,6 @@
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
   <?php
   $file1 = fopen('files/1.txt', 'w');
 

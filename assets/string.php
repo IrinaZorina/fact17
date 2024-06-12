@@ -76,6 +76,9 @@
     echo "Количество дней между датами: $days";
 
     ?>
+    <br>
+    <br>
+    <br>
   </main>
   <?php
   include 'inserts/footer.php';
