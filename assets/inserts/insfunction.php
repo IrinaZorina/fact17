@@ -5,9 +5,9 @@ function styleTime()
   $hour = date("H");
 
   if ($hour >= 8 && $hour < 20) {
-    return 'styles/style.css';
+    echo "<link rel='stylesheet' href='" . 'styles/style.css' . "'>";
   } else {
-    return 'styles/style2.css';
+    echo "<link rel='stylesheet' href='" . 'styles/style2.css' . "'>";
   }
 }
 ?>

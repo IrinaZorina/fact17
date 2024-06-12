@@ -23,7 +23,7 @@ img {
   top: 0;
   justify-content: space-around;
   align-items: center;
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 40px;
   background-color: white;
   z-index: 100;
@@ -383,7 +383,7 @@ th {
   }
 
   .header {
-    font-size: 8px;
+    font-size: 10px;
     margin-bottom: auto;
   }
 
@@ -422,5 +422,9 @@ th {
   .odeshda3,
   .odeshda4 {
     flex-basis: 75%;
+  }
+  .header {
+    font-size: 8px;
+    margin-bottom: auto;
   }
 }

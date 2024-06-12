@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="styles/vodorod.css">
     <link rel="icon" href="media/vizitka.png">
     <?php
-    include 'inserts/time.php';
+    require_once 'inserts/insfunction.php';
+    styleTime();
     ?>
 </head>
 
