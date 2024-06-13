@@ -9,12 +9,28 @@
   <a href="cook.php" class="cook">COOKIE/SESSION </a>
   <a href="sign.php" class="sign">Авторизация</a>
   <?php
-  session_start();
+    $hostname = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = 'loginPassword';
 
-  if (isset($_SESSION["login"]) && isset($_SESSION["password"])) {
-    if (($_SESSION["login"] == "pazukhav") && ($_SESSION["password"] == "17072003")) {
-      echo "Login: " . $_SESSION['login']; //сделал авторицзацию(в хедере появляется логин)
-    }
-  }
-  ?>
+    $connect = mysqli_connect($hostname, $username, $password, $dbname);
+
+    mysqli_set_charset($connect, 'utf8');
+
+    if (isset($_POST["register"])) {
+      $login = $_POST['login'];
+      $password = $_POST['password'];
+
+      $sql1 = "SELECT login FROM loginPassword WHERE login = '$login'";
+      $sql2 = "SELECT password FROM loginPassword WHERE password = '$password'";
+      $result1 = mysqli_query($connect, $sql1);
+      $result2 = mysqli_query($connect, $sql2);
+
+      if (mysqli_num_rows($result1) > 0) {
+        $row = mysqli_fetch_assoc($result2);
+        if ($password === $row['password']) {
+          echo "Вы авторизовались, $login";
+        }}}
+        ?>
 </header>

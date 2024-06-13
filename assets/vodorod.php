@@ -28,6 +28,54 @@
                 <span class="atomic-mass"><strong>1,00797</strong></span>
             </div>
         </div>
+        <?php
+        session_start();
+
+        if (isset($_SESSION['background_color'])) {
+            $backgroundColor = $_SESSION['background_color'];
+            echo "<style>body { background-color: $backgroundColor; }</style>";
+        } else {
+            $backgroundColor = 'blue';
+        }
+        ?>
+
+        <h1>Выбери цвет фона</h1>
+
+        <form method="post">
+            <select name="color">
+                <option value="red" <?php if ($backgroundColor == 'red')
+                    echo 'selected'; ?>>Красный</option>
+                <option value="green" <?php if ($backgroundColor == 'green')
+                    echo 'selected'; ?>>Зеленый</option>
+                <option value="blue" <?php if ($backgroundColor == 'blue')
+                    echo 'selected'; ?>>Синий</option>
+            </select>
+            <input type="submit" value="Выбрать">
+        </form>
+
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $selectedColor = $_POST['color'];
+            $_SESSION['background_color'] = $selectedColor;
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit;
+        }
+        ?>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </main>
 
     <?php
