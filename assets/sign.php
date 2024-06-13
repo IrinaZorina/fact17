@@ -16,53 +16,87 @@
 </head>
 
 <body>
-
   <?php
   include 'inserts/header.php';
   ?>
   <main>
-    <h3>LOGIN pazukhav<br>PASSWORD 17072003</h3>
+    <?php
+    $hostname = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = 'loginPassword';
+
+    $connect = mysqli_connect($hostname, $username, $password, $dbname);
+
+    mysqli_set_charset($connect, 'utf8');
+
+    if (isset($_POST["register"])) {
+      $login = $_POST['login'];
+      $password = $_POST['password'];
+
+      $query = "INSERT INTO loginPassword (login, password) VALUES ('$login', '$password')";
+      if (mysqli_query($connect, $query)) {
+        echo "Вы зарегистрировались";
+      } else {
+        echo "Ошибка регистрации";
+      }
+    }
+
+    if (isset($_POST["login"])) {
+      $login = $_POST['login'];
+      $password = $_POST['password'];
+
+      $query = "SELECT * FROM loginPassword WHERE login = '$login'";
+      $result = mysqli_query($connect, $query);
+
+      if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+        if (password_verify($password, $row['password'])) {
+          session_start();
+          $_SESSION['login'] = $login;
+          echo "Вы авторизовались!";
+        } else {
+          echo "<br>";
+          echo "Неверный логин или пароль";
+        }
+      } else {
+        echo "<br>";
+        echo "Пользователь не найден";
+      }
+    }
+    ?>
+
+    <h3>Регистрация</h3>
     <form method="post" action="sign.php">
-      <label for="login">Введите логин:</label>
-      <input type="text" name="login">
-      <br>
-      <br>
-      <label for="password">Введите пароль:</label>
-      <input type="password" name="password">
-      <br>
-      <br>
-      <input type="submit" value="Авторизоваться">
+      <label for="login">Login</label><br>
+      <input type="text" id="login" name="login"><br>
+      <label for="password">Password</label><br>
+      <input type="text" id="password" name="password"><br><br>
+      <input type="submit" name="register" value="Зарегистрироваться">
     </form>
+
+    <h3>Авторизация</h3>
+    <form method="post" action="sign.php">
+      <label for="login">Login</label><br>
+      <input type="text" id="login" name="login"><br>
+      <label for="password">Password</label><br>
+      <input type="text" id="password" name="password"><br><br>
+      <input type="submit" name="login" value="Авторизоваться">
+    </form>
+
     <br>
     <a href="inserts/fact.php" class="getpos">Факт</a>
     <a href="inserts/bitrix.php" class="getpos">Битрикс</a>
     <br>
 
     <?php
-    if (isset($_POST["login"]) && isset($_POST["password"])) {
-      $_SESSION['login'] = $_POST['login'];
-      $_SESSION['password'] = $_POST['password'];
-      if (($_POST["login"] == "pazukhav") && ($_POST["password"] == "17072003")) {
-        header('Location: index.php');
-        exit;
-      }
-      $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    }
-    ?>
-    <?php
     session_start();
 
-    if (isset($_SESSION["login"]) && isset($_SESSION["password"])) {
-      if (($_SESSION["login"] == "pazukhav") && ($_SESSION["password"] == "17072003")) {
-        echo "<br>";
-        echo "Login: " . $_SESSION['login'];
-        echo "<br>";
-        $lastPage = $_SESSION['last_page'] ?? null;
-        echo "Последняя посещенная страница: $lastPage";
-      } else {
-        echo "<br>";
-        echo "Неверный логин или пароль";
-      }
+    if (isset($_SESSION["login"])) {
+      echo "<br>";
+      $lastPage = $_SESSION['last_page'] ?? null;
+      echo "Последняя посещенная страница: $lastPage";
     }
     ?>
     <?php
@@ -100,17 +134,7 @@
     ?>
     <H3>Так же при запуске или обновлении это страницы произодится работа с файлами</H3>
   </main>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
   <?php
   $file1 = fopen('files/1.txt', 'w');
 
