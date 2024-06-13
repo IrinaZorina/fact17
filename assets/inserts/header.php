@@ -30,7 +30,7 @@
       if (mysqli_num_rows($result1) > 0) {
         $row = mysqli_fetch_assoc($result2);
         if ($password === $row['password']) {
-          echo "Вы авторизовались, $login";
+          echo $login;
         }}}
         ?>
 </header>
