@@ -1,17 +1,15 @@
 <?php
-$Login = 'user';
-$Password = '1234567';
-$isAuthorize = false;
-$userLogin = '';
+include 'auth.php';
 if (
     isset($_POST['Login']) && isset($_POST['Password'])
-    && ($Login == $_POST['Login'])
-    && ($Password == $_POST['Password'])
 ) {
-    $isAuthorize = true;
     $userLogin = $_POST['Login'];
-    setcookie('UserLogin', $userLogin, time() + 3600, "/");
-    setcookie('LastAuth', time(), time() + 3600, "/");
+    $auth = new Auth();
+    if ($auth->auth($userLogin, $_POST['Password'])) {
+        $isAuthorize = true;
+        setcookie('UserLogin', $userLogin, time() + 3600, "/");
+        setcookie('LastAuth', time(), time() + 3600, "/");
+    }
 }
 if (!$userLogin && isset($_COOKIE['UserLogin'])) {
     $userLogin = $_COOKIE['UserLogin'];
