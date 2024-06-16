@@ -33,7 +33,7 @@
 				<div class="text"><p class="<?php echo $time?>">Театр оперы и балета</p></div>
 			</div>
 			<div class="conteiner_F">
-				<div class="images_F"><img class="foto_saratov_F" src="media/City Park.jpg" alt="Городской парк"></div>
+				<div class="images_F"><img class="foto_saratov_F" src="media/City_Park.jpg" alt="Городской парк"></div>
 				<div class="text"><p class="<?php echo $time?>">Городской парк</p></div>
 			</div>
 			<div class="conteiner_F">
@@ -52,11 +52,11 @@
 				<div class="text"><p class="<?php echo $time?>" >Мост</p></div>
 			</div>
 			<div class="conteiner_G">
-				<div class="images_G"><img class="foto_saratov_G" src="media/space retaliation park.jpg" alt="Парк покщрителей космоса"></div>
+				<div class="images_G"><img class="foto_saratov_G" src="media/space_retaliation_park.jpg" alt="Парк покщрителей космоса"></div>
 				<div class="text"><p class="<?php echo $time?>">Парк покорителей космоса</p></div>
 			</div>
 			<div class="conteiner_G">
-				<div class="images_G"><img class="foto_saratov_G" src="media/victory park.jpg" alt="Парк победы"></div>
+				<div class="images_G"><img class="foto_saratov_G" src="media/victory_park.jpg" alt="Парк победы"></div>
 				<div class="text"><p class="<?php echo $time?>">Парк Победы</p></div>
 			</div>
 		</div>

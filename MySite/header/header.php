@@ -9,8 +9,7 @@
 		<label for='two'>Введите пароль: </label>
 		<input type='password' name="passw" id='two'>
 		<input type='submit'>
-		<!--<p>*пароль = 1234</p>-->
-	</form>
+		</form>
 
 <?php
 	
@@ -18,13 +17,11 @@
 	$passw = isset($_POST["passw"]) ? $_POST["passw"] : " ";
 
 
-	$hostname = 'localhost';
-	$username = 'fact';
-	$password = 'fact';
-	$dbname = 'MySite';
+	include "BD/bd_autorization.php";
+	$authorization = new Authorization ('localhost', 'fact', 'fact', 'MySite');
+	$connection = $authorization->go();
+	$utf8= $authorization->utf8();
 
-	$connection = mysqli_connect($hostname, $username, $password, $dbname);
-	mysqli_set_charset($connection, 'utf8');
 
 	$query = mysqli_query($connection, "Select * From User");
 	$arr = mysqli_fetch_all($query, MYSQLI_ASSOC);
@@ -34,15 +31,6 @@
 		if ($name == $value['name'] and $passw == $value['password']) 
 		{include "header/header_yes_password.php";}
 		}
-
-/////// раньше было так
-    // $name = isset($_POST["name"]) ? $_POST["name"] : " ";
-		// $password = isset($_POST["passw"]) ? $_POST["passw"] : " ";
-		// $password = md5($password);
-		// $a= md5(1234);
-		// if ($password == $a){
-		// 	 include "header/header_yes_password.php";
-		// }
 
 ?>
  

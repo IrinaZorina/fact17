@@ -1,22 +1,21 @@
 <?php 
 
-	$hostname = 'localhost';
-	$username = 'fact';
-	$password = 'fact';
-	$dbname = 'MySite';
 
-$connection = mysqli_connect($hostname, $username, $password, $dbname);
-mysqli_set_charset($connection, 'utf8');
+include "user_autorization.php";
+$user = new User (isset($_POST['name']), isset($_POST['password']));
+$name= $user->name();
+$password=$user->password();
 
-$name = isset($_POST['name'])? $_POST['name']: ' ';
-$password = isset($_POST['password']) ? $_POST['password']: ' '; 
 
+include "bd_autorization.php";
+$authorization = new Authorization ('localhost', 'fact', 'fact', 'MySite');
+$connection = $authorization->go();
+$utf8= $authorization->utf8();
 echo '<br>';
 
 if ($name !== ' ' and $password !== ' '){
 	mysqli_query($connection, "INSERT INTO User (name, password) VALUES ( '$name', '$password')");
 	echo 'Спасибо за регестрацию ' . "$name" . '. <a href="../index.php"> Вернуться на сайт</a>';
-	
 }
 
 ?>
