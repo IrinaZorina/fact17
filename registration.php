@@ -7,7 +7,7 @@ require_once 'includes/user.php';
 $password = $_POST['password'] ?? '';
 $login = $_POST['login'] ?? '';
 
-$userData = new User($login, $password, $connection);
+$userData = new User($connection);
 $errors = $userData->registration();
 ?>
 

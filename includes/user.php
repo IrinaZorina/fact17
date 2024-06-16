@@ -1,13 +1,9 @@
 <?php
 
 class User {
-    public $login;
-    public $password;
     public $connection;
 
-    public function __construct($login, $password, $connection) {
-        $this->login = $login;
-        $this->password = $password;
+    public function __construct($connection) {
         $this->connection = $connection;
     }
 
@@ -52,9 +48,9 @@ class User {
         if (empty($_POST)) {
             return [];
         }
-
-        $login = $this->login;
-        $password = $this->password;
+        
+        $login = $_POST['login'] ?? '';
+        $password = $_POST['password'] ?? '';
         $current_date = date('Y-m-d');
 
         $required_fields = ['login', 'password'];
@@ -94,9 +90,6 @@ class User {
         if (empty($_POST) && empty($_SESSION['login'])) {
             return [];
         }
-
-        $login = $this->login;
-        $password = $this->password;
     
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $required = ['login', 'password'];
@@ -108,8 +101,7 @@ class User {
             }
     
             if (empty($errors)) {
-                $email = $_POST['login'];
-    
+                $login = $_POST['login'];
                 $safe_login = mysqli_real_escape_string($this->connection, $login);
                 $user_query = $this->selectQuery($this->connection, "SELECT * FROM users WHERE login = '$safe_login'", 'assoc');
     
@@ -118,7 +110,7 @@ class User {
                 if (isset($user)) {
                     if (password_verify($_POST['password'], $user['password'])) {
                         $_SESSION['login'] = $user['login'];
-                        $_SESSION['password'] = $password;
+                        $_SESSION['password'] = $_POST['password'];
                         $_SESSION['passwordHash'] = $user['password'];
                     } else {
                         $errors['password'] = 'Неверный пароль';
