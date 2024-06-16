@@ -4,8 +4,8 @@ require_once 'includes/functions.inc.php';
 require_once 'includes/db.connect.inc.php';
 require_once 'includes/user.php';
 
-$password = $_POST['password'] ?? '';;
-$login = $_POST['login'] ?? '';;
+$password = $_POST['password'] ?? '';
+$login = $_POST['login'] ?? '';
 
 $userData = new User($login, $password, $connection);
 $errors = $userData->authenticate();
