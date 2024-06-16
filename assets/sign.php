@@ -20,49 +20,25 @@
   include 'inserts/header.php';
   ?>
   <main>
-  <?php
+    <?php
+    require_once 'inserts/users.php';
     $hostname = 'localhost';
     $username = 'root';
     $password = '';
     $dbname = 'loginPassword';
-
-    $connect = mysqli_connect($hostname, $username, $password, $dbname);
-
-    mysqli_set_charset($connect, 'utf8');
-
-    if (isset($_POST["register"])) {
-      $login = $_POST['login'];
-      $password = $_POST['password'];
-
-      $sql1 = "SELECT login FROM loginPassword WHERE login = '$login'";
-      $sql2 = "SELECT password FROM loginPassword WHERE password = '$password'";
-      $result1 = mysqli_query($connect, $sql1);
-      $result2 = mysqli_query($connect, $sql2);
-
-      if (mysqli_num_rows($result1) > 0) {
-        $row = mysqli_fetch_assoc($result2);
-        if ($password === $row['password']) {
-          echo "<h2>Вы авторизовались, $login </h2>";
-        } else {
-          echo "<h2>Неверный пароль</h2>";
-        }
-      } else {
-        $sql = "INSERT INTO loginPassword (login, password) VALUES ('$login', '$password')";
-        if (mysqli_query($connect, $sql)) {
-          echo "<h2>Вы зарегистрировались, $login </h2>";
-        } else {
-          echo "Ошибка при регистрации: " . mysqli_error($connect);
-        }
-      }
-    }
+    $user = new User($hostname, $username, $password, $dbname);
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $result1 = $user->register($login, $password);
+    echo "<h2>$result1</h2>";
     ?>
 
     <h3>Регистрация / Авторизация</h3>
     <form method="post" action="sign.php">
       <label for="login">Login</label><br>
-      <input type="text" id="login" name="login"><br>
+      <input type="text" id="login" name="login" required><br>
       <label for="password">Password</label><br>
-      <input type="text" id="password" name="password"><br><br>
+      <input type="text" id="password" name="password" required><br><br>
       <input type="submit" name="register" value="Подтвердить">
     </form>
     <br>
@@ -72,9 +48,9 @@
 
     <?php
     session_start();
-      echo "<br>";
-      $lastPage = $_SESSION['last_page'] ?? null;
-      echo "Последняя посещенная страница: $lastPage";
+    echo "<br>";
+    $lastPage = $_SESSION['last_page'] ?? null;
+    echo "Последняя посещенная страница: $lastPage";
     ?>
 
     <H3>Так же при запуске или обновлении это страницы произодится работа с файлами</H3>
