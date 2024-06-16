@@ -1,6 +1,14 @@
 <?php
 session_start();
 require_once 'includes/functions.inc.php';
+require_once 'includes/db.connect.inc.php';
+require_once 'includes/user.php';
+
+$password = $_POST['password'] ?? '';;
+$login = $_POST['login'] ?? '';;
+
+$userData = new User($login, $password, $connection);
+$errors = $userData->registration();
 ?>
 
 <!DOCTYPE html>
@@ -20,26 +28,17 @@ require_once 'includes/functions.inc.php';
   <main>
     <form class="registration-form" action="registration.php" method="post">
         <label for="login">Логин:</label>
-        <input type="text" id="login" name="login" required>
+        <input class="<?= isset($errors['login']) && is_array($errors) ? 'form__input--error' : '' ?>" type="text" 
+        value="<?= htmlspecialchars($login) ?>" placeholder="Введите логин" id="login" name="login" required>
+        <?= isset($errors['login']) && is_array($errors) ? '<p class="form__message">' . $errors['login'] . '</p>' : '' ?>
 
         <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" value="<?= htmlspecialchars($password) ?>" placeholder="Введите пароль" required>
+        <?= isset($errors['password']) && is_array($errors) ? '<p class="form__message">' . $errors['password'] . '</p>' : '' ?>
 
         <button type="submit">Зарегистрироваться</button>
     </form>
     <a class="auth-link" href="auth.php">Авторизоваться</a>
-
-    <?php
-      $newUserData = registrationUser();
-
-      if ($newUserData == true) {
-        $_SESSION['login'] = $newUserData['login'];
-        $_SESSION['password'] = $newUserData['password'];
-        $_SESSION['passwordHash'] = $newUserData['passwordHash'];
-        header("Location: index.php");
-        exit();
-      } 
-    ?>
   </main>
   <?php
   require_once 'templates/footer.php';

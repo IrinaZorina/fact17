@@ -57,7 +57,7 @@ require_once 'includes/functions.inc.php';
           }
         ?>
       </div>
-      <section class='info-container'>
+      <div class='info-container'>
         <img class='photo' src='img/photo.jpg' alt='Фотография' />
 
         <div class='user-info'>
@@ -105,7 +105,7 @@ require_once 'includes/functions.inc.php';
           </ul>
           </div>
         </div>
-      </section>
+      </div>
 
       <h2 class='block-title'>Список музеев для посещения</h2>
 

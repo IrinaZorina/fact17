@@ -76,7 +76,7 @@ function doubleColorText($originalText, $colorFirst, $colorSecond)
     }
   }
 
-  return implode(' ', $wordsArray);
+  return '<li>' . implode(' ', $wordsArray) . '</li>';
 }
 
 function getCheckQuestion($number, $answer)
@@ -118,31 +118,6 @@ function getScore($questionsYes, $questionsNo)
   return $score;
 }
 
-function registrationUser()
-{
-  $login = isset($_POST['login']) ? $_POST['login'] : null;
-  $passwordHash = isset($_POST['password']) ? md5($_POST['password']) : null;
-
-  if (isset($login) && isset($passwordHash)) {
-    return [
-      'login' => $login,
-      'password' => $_POST['password'],
-      'passwordHash' => $passwordHash,
-    ];
-  }
-}
-
-function checkUser($user)
-{
-  $login = isset($_POST['login']) ? $_POST['login'] : null;
-  $passwordHash = isset($_POST['password']) ? md5($_POST['password']) : null;
-
-  if ($login === $user['login'] && $passwordHash === $user['passwordHash']) {
-    $user['password'] = $_POST['password'];
-    return $user;
-  }
-}
-
 function getPageBackgroundColor()
 {
   if (isset($_POST['pageBackgroundColor'])) {
@@ -162,3 +137,28 @@ function getFileArray($path, $name)
   $fileContent = str_replace("\r", "", file_get_contents($path . $name));
   return explode("\n", $fileContent);
 }
+
+// function registrationUser()
+// {
+//   $login = isset($_POST['login']) ? $_POST['login'] : null;
+//   $passwordHash = isset($_POST['password']) ? md5($_POST['password']) : null;
+
+//   if (isset($login) && isset($passwordHash)) {
+//     return [
+//       'login' => $login,
+//       'password' => $_POST['password'],
+//       'passwordHash' => $passwordHash,
+//     ];
+//   }
+// }
+
+// function checkUser($user)
+// {
+//   $login = isset($_POST['login']) ? $_POST['login'] : null;
+//   $passwordHash = isset($_POST['password']) ? md5($_POST['password']) : null;
+
+//   if ($login === $user['login'] && $passwordHash === $user['passwordHash']) {
+//     $user['password'] = $_POST['password'];
+//     return $user;
+//   }
+// }

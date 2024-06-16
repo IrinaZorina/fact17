@@ -1,6 +1,14 @@
 <?php
 session_start();
 require_once 'includes/functions.inc.php';
+require_once 'includes/db.connect.inc.php';
+require_once 'includes/user.php';
+
+$password = $_POST['password'] ?? '';;
+$login = $_POST['login'] ?? '';;
+
+$userData = new User($login, $password, $connection);
+$errors = $userData->authenticate();
 ?>
 
 <!DOCTYPE html>
@@ -20,33 +28,17 @@ require_once 'includes/functions.inc.php';
   <main>
     <form class="auth-form" action="auth.php" method="post">
         <label for="login">Логин:</label>
-        <input type="text" id="login" name="login" required>
+        <input  class="form__input <?= isset($errors['login']) && is_array($errors) ? 'form__input--error' : '' ?>" 
+        type="text" id="login" name="login" value="<?= htmlspecialchars($login) ?>" placeholder="Введите логин" required>
+        <?= isset($errors['login']) && is_array($errors) ? '<p class="form__message">' . $errors['login'] . '</p>' : '' ?>
 
         <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" value="<?= htmlspecialchars($password) ?>" placeholder="Введите пароль" required>
+        <?= isset($errors['password']) && is_array($errors) ? '<p class="form__message">Неверный пароль</p>' : '' ?>
 
         <button type="submit">Войти</button>
     </form>
     <a class='reg-link' href="registration.php">Зарегистрироваться</a>
-
-    <?php
-      $user = [
-        'login' => 'dkrech07',
-        'passwordHash' => '1f285f3db9e5c6d5851987798eb2f167', // Пароль: Fduecn2018
-      ];
-
-      $userData = checkUser($user);
-
-      if (checkUser($user) == true) {
-        $_SESSION['login'] = $userData['login'];
-        $_SESSION['password'] = $userData['password'];
-        $_SESSION['passwordHash'] = $userData['passwordHash'];
-
-        header("Location: index.php");
-        exit();
-      } 
-    ?>
-    
   </main>
   <?php
   require_once 'templates/footer.php';
