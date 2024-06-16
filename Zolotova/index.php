@@ -21,7 +21,7 @@
         <?php
             include "header.php"
             ?>
-        <main>
+        <main style=background-color:ivory>
             <div class="flex-conteiner">
         <div class="one"><div class="img"></div></div>   
         <div class="two"><p>Меня зовут Золотова Анастасия, мне 22 года, учусь в Магнитогорском государственном техническом университете <br>

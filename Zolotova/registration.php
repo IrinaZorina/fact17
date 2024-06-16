@@ -24,12 +24,12 @@
 </body>
 </html>
 <?php
-if($_POST["login"]=="Zolotova" && $_POST["password"]=="qwerty"){
+if($_POST=="Zolotova" && $_POST=="qwerty"){
      echo "Ради вас видеть<br>";
 prin_r($_POST);
 }
 else{
     echo "Неправильный логин или пароль";
 }
-$_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
+$_POST['password']= password_hash($_POST['password'], PASSWORD_DEFAULT);
 ?>
